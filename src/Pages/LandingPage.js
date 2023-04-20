@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import Grid from '../Components/Grid';
+import Footer from '../Components/Footer';
 
 function LandingPage() {
   return (
     <Wrapper>
-
       <LogoWrapper>
         <Logo src="./logga/MAIN.png" alt="" />
         <LogoText>Feline & Franciska</LogoText>
@@ -38,6 +38,7 @@ function LandingPage() {
         </Nav>
 
       <Grid />
+      <Footer /> 
 
     </Wrapper>
   );
@@ -57,7 +58,7 @@ const LogoWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 10px;
 `
 const Logo = styled.img`
   height: 250px;
@@ -79,7 +80,7 @@ color: white;
 `
 const Nav = styled.nav`
   width: 500px;
-  padding: 2em;
+  padding: 10px;
   color: white;
   font-family: Raleway-Black;
   font-size: 1.3em;
