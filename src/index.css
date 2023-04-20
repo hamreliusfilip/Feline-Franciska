@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face{ 
+  font-family: 'HelveticaAll'; 
+  src: local('Helvetica'),
+  url('./Fonts/Helvetica.ttf') format('truetype');
+  font-weight: 500; 
+}
+
+@font-face{ 
+  font-family: 'Raleway-Black'; 
+  src: local('Raleway-Black'),
+  url('./Fonts/Raleway-Black.ttf') format('truetype');
+  font-weight: 500; 
+}
+
+@font-face{ 
+  font-family: 'Raleway-Bold'; 
+  src: local('Raleway-Bold'),
+  url('./Fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: 500; 
+}
+
+@font-face{ 
+  font-family: 'AveriaT'; 
+  src: local('Averia'),
+  url('./Fonts/Averia.ttf') format('truetype');
+  font-weight: 500; 
+}
