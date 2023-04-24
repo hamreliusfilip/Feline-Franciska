@@ -28,10 +28,7 @@ function Footer () {
                         </li>
                     </ul>
                 </Nav>
-                <LogoWrapper>
-                    <LogoText>Feline & Franciska</LogoText>
                     <Logo src="./logga/MAIN.png" alt="" />
-                </LogoWrapper>
             </Wrapper>
             <Disclaimer>© 2023 FELINE & FRANCISKA</Disclaimer>
         </div>
@@ -47,28 +44,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-top: 1px solid white;
+  padding-top: 2em;
 `;
 
-const LogoWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-`;
 
 const Logo = styled.img`
   height: 125px;
   width: 125px;
-  margin.right: 9em;
-`;
-
-const LogoText = styled.p`
-  color: white;
-  font-family: AveriaT;
-  font-size: 2.5em; 
-  text-align: center;
-  margin-top: 1em;
+  margin-right: 3%;
 `;
 
 const Nav = styled.nav`
@@ -101,7 +85,7 @@ const Nav = styled.nav`
     cursor: pointer;
     text-transform: uppercase;
     text-height: 20px;
-    line-height: 1.5;
+    line-height: 1.7;
 
     &:hover {
       color: #1c1c1c;
@@ -116,7 +100,7 @@ const Nav = styled.nav`
 
 const Disclaimer = styled.p`    
 font-family: HelveticaAll;
-font-size: 0.8em;
+font-size: 1.2em;
 color: white;
 text-align: center;
 margin-top: 1em;

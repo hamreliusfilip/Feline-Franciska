@@ -22,7 +22,6 @@ function Grid () {
             <GridItem className="card-tall" style={{backgroundImage: `url(./logga/placeholder.jpg)`}}></GridItem>
             <GridItem className="card-wide" style={{backgroundImage: `url(./logga/placeholder.jpg)`}}></GridItem>
             <GridItem className="card-wide" style={{backgroundImage: `url(./logga/placeholder.jpg)`}}></GridItem>
-            
         </Wrapper>
     )
 }

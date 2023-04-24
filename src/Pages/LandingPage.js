@@ -10,36 +10,35 @@ function LandingPage() {
     <Wrapper>
       <LogoWrapper>
         <Logo src="./logga/MAIN.png" alt="" />
-        <LogoText>Feline & Franciska</LogoText>
-        {/* <LogoTextSmall>BY FANNY HAMRELIUS</LogoTextSmall> */}
+        <TextWrapper>
+          <LogoText>Feline & Franciska</LogoText>
+          <LogoTextSmall>BY FANNY HAMRELIUS</LogoTextSmall>
+        </TextWrapper>
       </LogoWrapper>
-
-        <Nav>
-          <ul>
-            <li>
-              <NavLink to="/">HOME</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Contact">CONTACT</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Illustrations">ILLUSTRATIONS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Paintings">PAINTINGS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Comics">COMICS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Shop">SHOP</NavLink>
-            </li>
-          </ul>
-        </Nav>
-
+      <Nav>
+        <ul>
+          <li>
+            <NavLink to="/">HOME</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Illustrations">ILLUSTRATIONS</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Shop">SHOP</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Comics">COMICS</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Contact">CONTACT</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Paintings">PAINTINGS</NavLink>
+          </li>
+        </ul>
+      </Nav>
       <Grid />
-      <Footer /> 
-
+      <Footer />
     </Wrapper>
   );
 } export default LandingPage;
@@ -58,49 +57,56 @@ const LogoWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+`
+const TextWrapper = styled.div`
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 `
 const Logo = styled.img`
   height: 250px;
   width: 250px;
-  padding: 0.2em;
 `
 const LogoText = styled.p`
   color: white;
   font-family: AveriaT;
   font-size: 4em; 
-  padding: 0.5em;
+  margin-top: 170px;
+  margin-left: 20px;
 `
 const LogoTextSmall = styled.p`
-color: white;
+  color: white;
   font-family: HelveticaAll;
   font-size: 1.3em; 
-  padding: 1em;
   font-weight: bold;
+  margin-top: -70px;
+  margin-left: 22px;
 `
 const Nav = styled.nav`
-  width: 500px;
-  padding: 10px;
+  width: 320px;
   color: white;
   font-family: Raleway-Black;
   font-size: 1.3em;
   text-decoration: none;
   display: flex;
-  justify-content: justify-center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: grow;
+  text-align: justify;
+  margin-top: -65px;
 
   ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
   }
 
   li {
-    margin: 0 1em;
+    margin: 0 -5px;
   }
 
   a {
@@ -111,13 +117,15 @@ const Nav = styled.nav`
     text-height: 20px;
     line-height: 1.5;
 
-  &:hover {
-    color: #1c1c1c;
-  }
+    &:hover {
+      color: #1c1c1c;
+    }
 
-  &.active {
-    border-bottom: 4px solid white;
-    margin-top: -7px;
-  }
+    &.active {
+      border-bottom: 4px solid white;
+      margin-top: -7px;
+    }
   }
 `;
+
+
