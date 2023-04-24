@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import Menu from '../Components/Menu';
 
-import Grid from '../Components/Grid';
+import GridPaitnings from '../Components/GridPaitnings';
 
 function Painting() {
   return (
     <Container>
       <Menu title="PAINTINGS" />
       <Wrapper>
-      <Grid />
+      <GridPaitnings />
       </Wrapper>
     </Container>
   );

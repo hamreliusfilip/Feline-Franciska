@@ -2,7 +2,7 @@ import react from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import Grid from '../Components/Grid';
+import GridLanding from '../Components/GridLanding';
 import Footer from '../Components/Footer';
 
 function LandingPage() {
@@ -37,7 +37,7 @@ function LandingPage() {
           </li>
         </ul>
       </Nav>
-      <Grid />
+      <GridLanding />
       <Footer />
     </Wrapper>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Grid () { 
+function GridPaitnings () { 
     return (
         <Wrapper> 
             <GridItem className="card-tall" style={{backgroundImage: `url(./logga/placeholder.jpg)`}}></GridItem>
@@ -25,7 +25,7 @@ function Grid () {
         </Wrapper>
     )
 }
-export default Grid;
+export default GridPaitnings;
 
 const Wrapper = styled.div`
 padding: 4em;
