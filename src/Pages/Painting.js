@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Menu from '../Components/Menu';
 
 import GridPaitnings from '../Components/GridPaitnings';
+import Menu from '../Components/Menu';
+import Footer from '../Components/Footer';
 
 function Painting() {
   return (
@@ -11,6 +12,7 @@ function Painting() {
       <Wrapper>
       <GridPaitnings />
       </Wrapper>
+      <Footer />
     </Container>
   );
 }

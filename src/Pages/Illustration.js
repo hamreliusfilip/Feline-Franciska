@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Menu from '../Components/Menu';
+
 
 import GridIllustrations from '../Components/GridIllustrations';
+import Footer from '../Components/Footer';
+import Menu from '../Components/Menu';
 
 function Illustrations() {
   return (
@@ -11,6 +13,7 @@ function Illustrations() {
       <Wrapper>
         <GridIllustrations />
       </Wrapper>
+      <Footer />
     </Container>
   );
 }

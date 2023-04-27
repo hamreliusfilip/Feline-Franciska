@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
-const MenuBar = ({title}) => {
-  
+const Menutest = ({ title }) => {
   const [window, setWindow] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -11,25 +10,24 @@ const MenuBar = ({title}) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     setIsActive(!isActive);
-  };
-
-  const openClose = () => {
     setWindow(!window);
   };
 
   return (
     <Wrapper>
+
       <Logo src="./logga/MAIN.png" alt="" />
 
-      <div style={{ height: window ? 70 : 150 }}>
-        <div onClick={toggleMenu}>
-          <Icon onClick={openClose} isActive={isActive}>
-            <LogoStyle src={isOpen ? "loggor/cross.svg" : "loggor/menu.svg"} alt="MENU" />
-          </Icon>
-        </div>
-        <Navigation>
-          {window && <Title>{title}</Title>}
-          <Nav style={{ display: window ? 'none' : 'block' }}>
+      <div onClick={toggleMenu}>
+        <Icon onClick={() => setIsActive(!isActive)} isActive={isActive}>
+          <IconStyle src={isOpen ? "loggor/cross.svg" : "loggor/menu.svg"} />
+        </Icon>
+      </div>
+
+      <div>
+        {window && <Title>{title}</Title>}
+        <Navigation style={{ display: window ? "none" : "block" }}>
+          <Nav>
             <ul>
               <li>
                 <NavLink to="/">HOME</NavLink>
@@ -53,44 +51,49 @@ const MenuBar = ({title}) => {
           </Nav>
         </Navigation>
       </div>
+
     </Wrapper>
   );
 };
-
-export default MenuBar;
+export default Menutest;
 
 const Wrapper = styled.div`
-  padding-bottom: 150px;
   width: 100vw;
+  height: 200px;
   background-color: black;
+
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
+`
+const Logo = styled.img`
+  height: 130px;
+  width: 130px;
+`
+const Navigation = styled.div`
+width: 100vw;
+height: 100px;
+background-color: black;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+const IconStyle = styled.img`
+  width: 30px;
+  height: 30px;
+`
+const Icon = styled.div`
+  position: absolute;
+  right: 0; 
+  width: 30px;
+  padding: 20px;
+`
 const Title = styled.h1`
   font-size: 4em;
   color: white;
   font-family: Raleway-Black;
-`;
-const Logo = styled.img`
-  height: 130px;
-  width: 130px;
-`;
-
-const LogoStyle = styled.img`
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-`;
-const Navigation = styled.div`
-  width: 30%;
-`;
-const Icon = styled.div`
-  position: absolute;
-  width: 30px;  
-  height: 30px;
-`;
+`
 const Nav = styled.nav`
+  width: 500px;
   color: white;
   font-family: Raleway-Black;
   font-size: 1.3em;
@@ -99,7 +102,7 @@ const Nav = styled.nav`
   ul {
     list-style: none;
     display: flex;
-    // justify-content: space-between;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 
@@ -124,5 +127,4 @@ const Nav = styled.nav`
       margin-top: -7px;
     }
   }
-`;
-
+`

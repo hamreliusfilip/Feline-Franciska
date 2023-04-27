@@ -4,34 +4,34 @@ import { NavLink } from 'react-router-dom';
 
 function Footer () { 
     return (
+      <Wrapper>
         <div>
-            <Wrapper>
-                <Nav>
-                    <ul>
-                        <li>
-                            <NavLink to="/">HOME</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/Contact">CONTACT</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/Illustrations">ILLUSTRATIONS</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/Paintings">PAINTINGS</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/Comics">COMICS</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/Shop">SHOP</NavLink>
-                        </li>
-                    </ul>
-                </Nav>
-                    <Logo src="./logga/MAIN.png" alt="" />
-            </Wrapper>
-            <Disclaimer>© 2023 FELINE & FRANCISKA</Disclaimer>
+          <Nav>
+            <ul>
+              <li>
+                <NavLink to="/">HOME</NavLink>
+              </li>
+              <li>
+                <NavLink to="/Contact">CONTACT</NavLink>
+              </li>
+              <li>
+                <NavLink to="/Illustrations">ILLUSTRATIONS</NavLink>
+              </li>
+              <li>
+                <NavLink to="/Paintings">PAINTINGS</NavLink>
+              </li>
+              <li>
+                <NavLink to="/Comics">COMICS</NavLink>
+              </li>
+              <li>
+                <NavLink to="/Shop">SHOP</NavLink>
+              </li>
+            </ul>
+          </Nav>
+          <Logo src="./logga/MAIN.png" alt="" />
         </div>
+        <Disclaimer>© 2023 FELINE & FRANCISKA</Disclaimer>
+      </Wrapper>
     )
 }
 
@@ -100,6 +100,7 @@ const Nav = styled.nav`
 
 const Disclaimer = styled.p`    
 font-family: HelveticaAll;
+padding: 100px;
 font-size: 1.2em;
 color: white;
 text-align: center;

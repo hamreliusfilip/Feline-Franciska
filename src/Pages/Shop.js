@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Menu from '../Components/Menu';
 
+import Menu from '../Components/Menu';
 import GridShop from '../Components/GridShop';
+import Footer from '../Components/Footer';
 
 function Shop() {
   return (
@@ -11,6 +12,7 @@ function Shop() {
       <Wrapper>
       <GridShop /> 
       </Wrapper>
+      <Footer />
     </Container>
   );
 }
