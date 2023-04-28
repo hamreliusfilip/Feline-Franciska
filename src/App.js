@@ -1,6 +1,3 @@
-import react from 'react';
-import styled from 'styled-components';
-
 import LandingPage from './Pages/LandingPage';
 import Shop from './Pages/Shop';
 import Painting from './Pages/Painting';

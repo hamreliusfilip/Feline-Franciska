@@ -162,6 +162,46 @@ const Shopdata = [
   key: '18',
   type: 'card'
 },
+{
+  img: a1,
+  alt: "Reload page.",
+  info: "This is a really nice painting",
+  price: "99 kr",
+  key: '19',
+  type: 'card'
+},
+{
+  img: a1,
+  alt: "Reload page.",
+  info: "This is a really nice painting",
+  price: "99 kr",
+  key: '20',
+  type: 'card'
+},
+{
+  img: a1,
+  alt: "Reload page.",
+  info: "This is a really nice painting",
+  price: "99 kr",
+  key: '21',
+  type: 'card'
+},
+{
+  img: a1,
+  alt: "Reload page.",
+  info: "This is a really nice painting",
+  price: "99 kr",
+  key: '22',
+  type: 'card'
+},
+{
+  img: a1,
+  alt: "Reload page.",
+  info: "This is a really nice painting",
+  price: "99 kr",
+  key: '23',
+  type: 'card'
+},
 
 
 ]

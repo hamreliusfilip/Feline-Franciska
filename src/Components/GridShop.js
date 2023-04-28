@@ -130,29 +130,28 @@ const ImageRight = styled.img`
 `
 const Total = styled.div`
   position: relative;
-  align: center;
-  width: 100vw;
-  overflow-x: scroll; // change this line to overflow-x: scroll or auto
-  overflow-y: hidden;
+  z-index: 999!important;
+  overflow: scroll;
   display: flex;
   color: #DCDCDC;
-  z-index:3;
+  width: 100vw;
   
   &::-webkit-scrollbar {
-    display: none;
-    scroll-behavior: smooth;
-  }
-`;
+  display: none;
+}
+`
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100vw;
-  z-index:3;
+margin-top: 1%;
+width: 100vw;
+position: relative;
 `
 
 const Box = styled.div`
-  width: 280px;
-  height: 280px;
+  max-width: 320px;
+  max-height: 320px;
+  min-width: 320px;
+  min-height: 320px;
   margin-right: 20px;
   background-size: cover;
   background-position: center;

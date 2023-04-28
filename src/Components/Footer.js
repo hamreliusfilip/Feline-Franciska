@@ -2,37 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 
-function Footer () { 
-    return (
-      <Wrapper>
-        <div>
-          <Nav>
-            <ul>
-              <li>
-                <NavLink to="/">HOME</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Contact">CONTACT</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Illustrations">ILLUSTRATIONS</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Paintings">PAINTINGS</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Comics">COMICS</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Shop">SHOP</NavLink>
-              </li>
-            </ul>
-          </Nav>
-          <Logo src="./logga/MAIN.png" alt="" />
-        </div>
-        <Disclaimer>© 2023 FELINE & FRANCISKA</Disclaimer>
-      </Wrapper>
-    )
+function Footer() { 
+  return (
+    <Wrapper>
+      <Nav>
+        <ul>
+          <li><NavLink to="/">HOME</NavLink></li>
+          <li><NavLink to="/Contact">CONTACT</NavLink></li>
+          <li><NavLink to="/Illustrations">ILLUSTRATIONS</NavLink></li>
+          <li><NavLink to="/Paintings">PAINTINGS</NavLink></li>
+          <li><NavLink to="/Comics">COMICS</NavLink></li>
+          <li><NavLink to="/Shop">SHOP</NavLink></li>
+        </ul>
+      </Nav>
+      <Logo src="./logga/MAIN.png" alt="" />
+      <Disclaimer>© 2023 FELINE & FRANCISKA</Disclaimer>
+    </Wrapper>
+  )
 }
 
 export default Footer;
@@ -43,11 +29,11 @@ const Wrapper = styled.div`
   background-color: black;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   border-top: 1px solid white;
   padding-top: 2em;
 `;
-
 
 const Logo = styled.img`
   height: 125px;
@@ -72,7 +58,7 @@ const Nav = styled.nav`
     display: flex;
     margin: 0;
     padding: 0;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   li {
@@ -99,12 +85,12 @@ const Nav = styled.nav`
 `;
 
 const Disclaimer = styled.p`    
-font-family: HelveticaAll;
-padding: 100px;
-font-size: 1.2em;
-color: white;
-text-align: center;
-margin-top: 1em;
-margin-bottom: 1em;
-font-weight: bold;
+  font-family: HelveticaAll;
+  padding: 100px;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: bold;
 `;

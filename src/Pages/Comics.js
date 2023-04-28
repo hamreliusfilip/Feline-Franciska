@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Menu from '../Components/Menu';
-import Menutest from '../Components/Menutest';
 
 function Comics() {
   return (
     <Container>
-      {/* <Menu title="COMICS" /> */}
-      <Menutest title="COMICS" /> 
+      <Menu title="COMICS" /> 
       <Wrapper> 
       </Wrapper>
     </Container>
