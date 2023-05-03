@@ -1,78 +1,125 @@
-import a1 from '../assets/a1.png'
+import c2p0 from '../ComicsAssets/c2p0.png'
+import c2p1 from '../ComicsAssets/c2p1.png'
+import c2p2 from '../ComicsAssets/c2p2.png'
+import c2p3 from '../ComicsAssets/c2p3.png'
+import c2p4 from '../ComicsAssets/c2p4.png'
+import c2p5 from '../ComicsAssets/c2p5.png'
+import c2p6 from '../ComicsAssets/c2p6.png'
+import c2p7 from '../ComicsAssets/c2p7.png'
+import c2p8 from '../ComicsAssets/c2p8.png'
+import c2p9 from '../ComicsAssets/c2p9.png'
+import c2p10 from '../ComicsAssets/c2p10.png'
+import c2p11 from '../ComicsAssets/c2p11.png'
+import c2p12 from '../ComicsAssets/c2p12.png'
+import c2p13 from '../ComicsAssets/c2p13.png'
+import c2p14 from '../ComicsAssets/c2p14.png'
+import c2p15 from '../ComicsAssets/c2p15.png'
+import c2p16 from '../ComicsAssets/c2p16.png'
+import c2p17 from '../ComicsAssets/c2p17.png'
+import c2p18 from '../ComicsAssets/c2p18.png'
+import c2p19 from '../ComicsAssets/c2p19.png'
 
 const Comicsdata = [
 
 {
-  img: a1,
+  img: c2p0,
   alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '1',
-  type: 'card'
 },
 {
-  img: a1,
+  img: c2p1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
-  key: '1',
-  type: 'card'
-},
-{
-  img: a1,
-  alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '2',
-  type: 'card'
 },
 {
-  img: a1,
+  img: c2p2,
   alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '3',
-  type: 'card-wide'
 },
 {
-  img: a1,
+  img: c2p3,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  key: '3',
+},
+{
+  img: c2p4,
+  alt: "Reload page.",
   key: '4',
-  type: 'card'
 },
 {
-  img: a1,
+  img: c2p5,
   alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '5',
-  type: 'card'
 },
 {
-  img: a1,
+  img: c2p6,
   alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '6',
-  type: 'card-tall'
 },
 {
-  img: a1,
+  img: c2p7,
   alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '7',
-  type: 'card'
 },
 {
-  img: a1,
+  img: c2p8,
   alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '8',
-  type: 'card'
 },
 {
-  img: a1,
+  img: c2p9,
   alt: "Reload page.",
-  info: "This is a really nice painting",
   key: '9',
-  type: 'card'
 },
-
-
+{
+  img: c2p10,
+  alt: "Reload page.",
+  key: '10',
+},
+{
+  img: c2p11,
+  alt: "Reload page.",
+  key: '11',
+},
+{
+  img: c2p12,
+  alt: "Reload page.",
+  key: '12',
+},
+{
+  img: c2p13,
+  alt: "Reload page.",
+  key: '13',
+},
+{
+  img: c2p14,
+  alt: "Reload page.",
+  key: '14',
+},
+{
+  img: c2p15,
+  alt: "Reload page.",
+  key: '15',
+},
+{
+  img: c2p16,
+  alt: "Reload page.",
+  key: '16',
+},
+{
+  img: c2p17,
+  alt: "Reload page.",
+  key: '17',
+},
+{
+  img: c2p18,
+  alt: "Reload page.",
+  key: '18',
+},
+{
+  img: c2p19,
+  alt: "Reload page.",
+  key: '19',
+},
 ]
 export { Comicsdata }

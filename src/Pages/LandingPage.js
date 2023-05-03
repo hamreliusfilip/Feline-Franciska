@@ -6,7 +6,7 @@ import Footer from '../Components/Footer';
 
 function LandingPage() {
   return (
-    <Wrapper>
+    <Wrapper> 
       <LogoWrapper>
         <Logo src="./logga/MAIN.png" alt="" />
         <TextWrapper>

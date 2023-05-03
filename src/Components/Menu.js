@@ -8,7 +8,7 @@ const MenuBar = ({title}) => {
     <Wrapper >
       <LogoStyle src="./logga/MAIN.png" alt="" />
         <Nav>
-        <Title>{title}</Title>
+        {/* <Title>{title}</Title> */}
           <ul>
             <li>
               <NavLink to="/">HOME</NavLink>
@@ -36,8 +36,9 @@ const MenuBar = ({title}) => {
 
 export default MenuBar;
 
+
 const Wrapper = styled.div`
-  padding-bottom: 120px;
+  padding-bottom: 300px;
   width: 100vw;
   height: 100px;
   background-color: black;
@@ -63,20 +64,20 @@ const LogoStyle = styled.img`
   padding: 30px;
 `;
 const Nav = styled.nav`
-  width: 29%;
   padding-top: 150px;
   margin: 0 auto;
   color: white;
   font-family: Raleway-Black;
   font-size: 1.3em;
   text-decoration: none;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 
   ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-
   }
 
   li {
@@ -87,14 +88,11 @@ const Nav = styled.nav`
     color: white;
     text-decoration: none;
     cursor: pointer;
-    text-transform: uppercase;
-    text-height: 20px;
-    line-height: 1.5;
     transition: .2s;
 
     &.active {
       border-bottom: 4px solid white;
-      margin-top: -7px;
+      font-size: 1.4em;
     }
     &:hover {
       color: #1c1c1c;
