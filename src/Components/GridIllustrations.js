@@ -95,8 +95,11 @@ const ViewLargeImage = styled.div`
 `;
 
 const ImageLarge = styled.img`
-width: 50%;
-height: auto;
+min-width: 70%;
+min-height: 70%;
+
+max-width: 70%;
+max-height: auto;
 `
 
 const ImageLargeText = styled.p`

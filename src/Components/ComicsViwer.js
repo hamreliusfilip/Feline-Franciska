@@ -20,21 +20,35 @@ const ComicsViwer = () => {
   return (
     <div>
       <Wrapper>
-        <ButtonWrapperLeft disabled={scrollLeft1 === 0} onClick={() => handleScroll1(-280)}>
-            <ImageLeft src="" alt = "arrow" />
-        </ButtonWrapperLeft>
         <Total ref={ref1}>
           {Comicsdata.reverse().map((image) => (
             <Box
-                key={image.key}
-                style={{backgroundImage: `url(${image.img})` }}
-                alt={image.alt}
+              key={image.key}
+              style={{ backgroundImage: `url(${image.img})` }}
+              alt={image.alt}
             />
           ))}
         </Total>
-        <ButtonWrapperRight disabled={scrollLeft1 === ref1.current.scrollWidth - ref1.current.clientWidth} onClick={() => handleScroll1(280)}>
-            <ImageRight src="" alt = "arrow"/>
-        </ButtonWrapperRight>
+
+        <ButtonWrapper>
+
+          <ButtonWrapperLeft disabled={scrollLeft1 === 0} onClick={() => handleScroll1(-280)}>
+            <ImageLeft>PREV</ImageLeft>
+          </ButtonWrapperLeft>
+
+          <Circle /> 
+          <Circle /> 
+          <Circle /> 
+          <Circle /> 
+          <Circle />
+          <Circle />
+
+          <ButtonWrapperRight disabled={scrollLeft1 === ref1.current.scrollWidth - ref1.current.clientWidth} onClick={() => handleScroll1(280)}>
+            <ImageRight>NEXT</ImageRight>
+          </ButtonWrapperRight>
+
+        </ButtonWrapper>
+
       </Wrapper>
     </div>
   );
@@ -43,60 +57,53 @@ const ComicsViwer = () => {
 export { Comicsdata }
 export default ComicsViwer
 
+const Circle = styled.div`
+color: white;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: white;
+margin: 0 7px;
+`
+const ButtonWrapper = styled.div`
+  position: abolute;
+  z-index: 999!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin: 50px;
+`;
+
 const ButtonWrapperLeft = styled.button`
   all: unset;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999!important;
-  background-color: white; 
-  opacity: 0;
-  height: 70%;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 15px;
-
-  &:hover {
-    opacity: 0.2;
-    transition: 0.5s;
-  }
+  padding-right: 10px;
+  pointer: cursor;
 `
 const ButtonWrapperRight = styled.button`
   all: unset;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 999!important;
-  background-color: white; 
-  opacity: 0;
-  height: 70%;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 15px;
-
-  &:hover {
-    opacity: 0.2;
-    transition: 0.5s;
-  }
+  padding-left: 10px;
 `
-const ImageLeft = styled.img`
+const ImageLeft = styled.p`
   right:0;
-  transform: scaleX(-1);
   height: 10px;
   width: 30px;
+  color: white;
+  pointer: cursor;
 `
-const ImageRight = styled.img`
+const ImageRight = styled.p`
   left: 0;
   cursor: pointer;
   height: 10px;
   width: 30px;
+  color: white;
 `
 const Total = styled.div`
   position: relative;
-  z-index: 999!important;
+  z-index: 700;
   overflow: scroll;
   display: flex;
   color: #DCDCDC;
@@ -106,18 +113,16 @@ const Total = styled.div`
   display: none;
 }
 `
-
 const Wrapper = styled.div`
-margin-top: -5%;
-width: 100vw;
-position: relative;
+  margin-top: 5%;
+  width: 100vw;
+  position: relative;
 `
-
 const Box = styled.div`
-  min-width: 826px;
-  min-height: 1169px;
-  max-width: 826;
-  max-height: 1169px;
+  min-width: 32em;
+  min-height: 44em;
+  max-width: 32em;
+  max-height: 44em;
 
   margin-right: 20px;
   background-size: cover;

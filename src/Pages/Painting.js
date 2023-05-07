@@ -10,7 +10,7 @@ function Painting() {
     <Container>
       <Menu title="PAINTINGS" />
       <Wrapper>
-      <GridPaitnings />
+        <GridPaitnings />
       </Wrapper>
       <Footer />
     </Container>
@@ -20,7 +20,7 @@ function Painting() {
 export default Painting;
 
 const Container = styled.div`
-  height: 100vh;
+  background-color: black;
 `;
 
 const Wrapper = styled.div`

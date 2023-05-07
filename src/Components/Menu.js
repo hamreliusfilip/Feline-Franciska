@@ -8,7 +8,6 @@ const MenuBar = ({title}) => {
     <Wrapper >
       <LogoStyle src="./logga/MAIN.png" alt="" />
         <Nav>
-        {/* <Title>{title}</Title> */}
           <ul>
             <li>
               <NavLink to="/">HOME</NavLink>
@@ -38,7 +37,7 @@ export default MenuBar;
 
 
 const Wrapper = styled.div`
-  padding-bottom: 300px;
+  padding-bottom: 100px;
   width: 100vw;
   height: 100px;
   background-color: black;
@@ -47,12 +46,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-`;
-const Title = styled.h1`
-  font-size: 4em;
-  color: white;
-  font-family: Raleway-Black;
-  text-align: center;
 `;
 const LogoStyle = styled.img`
   cursor: pointer;

@@ -21,7 +21,7 @@ function Illustrations() {
 export default Illustrations;
 
 const Container = styled.div`
-  height: 100vh;
+  background-color: black;
 `;
 
 const Wrapper = styled.div`
