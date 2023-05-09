@@ -30,7 +30,7 @@ const ShopForm = () => {
             </Label>
 
             <Label>
-              <Input type="email" name="email" placeholder="object" required/>
+              <Input type="email" name="email" placeholder="object nr." required/>
             </Label>
 
             <Label>
@@ -38,7 +38,7 @@ const ShopForm = () => {
             </Label>
 
             <ButtonWrapper>
-              <Button type="submit" value="Send" >send.</Button>
+              <Button type="submit" value="Send" >SEND</Button>
             </ButtonWrapper>
 
           </form>

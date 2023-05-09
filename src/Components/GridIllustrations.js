@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 import { Illustrationsdata } from '../data/Illustrationsdata'
 
-
-
 function GridIllustrations () {
 
   const [blurValue, setBlurValue] = useState(0);
@@ -22,7 +20,6 @@ function GridIllustrations () {
       setBlurValue(0);
     }
   }, [showViewLargeImage, setBlurValue]);
-
 
   return (
     <div>
@@ -96,8 +93,7 @@ const GridItem = styled.div`
     box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
     transform: translateY(-3px) scale(1);
   }
-`;
-
+`
 const ViewLargeImage = styled.div`
   position: fixed;
   top: 50%;
@@ -112,21 +108,17 @@ const ViewLargeImage = styled.div`
   background-color: white; 
   z-index: 999!important;
   padding: 2em;
-`;
-
-
+`
 const ImageLarge = styled.img`
 height: 70vh;
 width: auto;
 `
-
 const ImageLargeText = styled.p`
 font-size: 1.2em;
 font-family: HelveticaAll; 
 color: black;
 font-weight: 600;
 `
-
 const ButtonClose = styled.button`
 position: relative;
 top: 5%;

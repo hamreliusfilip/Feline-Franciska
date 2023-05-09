@@ -5,204 +5,162 @@ const Shopdata = [
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '1',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
-  key: '1',
-  type: 'card'
-},
-{
-  img: a1,
-  alt: "Reload page.",
-  info: "This is a really nice painting",
-  price: "99 kr",
+  object: "nr.01",
   key: '2',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '3',
-  type: 'card-wide'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '4',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '5',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '6',
-  type: 'card-tall'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '7',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '8',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '9',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
-  key: '1',
-  type: 'card'
-},
-{
-  img: a1,
-  alt: "Reload page.",
-  info: "This is a really nice painting",
-  price: "99 kr",
+  object: "nr.01",
   key: '10',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '11',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '12',
-  type: 'card-wide'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '13',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '14',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '15',
-  type: 'card-tall'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '16',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '17',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '18',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '19',
-  type: 'card'
 },
 {
   img: a1,
   alt: "Reload page.",
-  info: "This is a really nice painting",
+  info: "Postcard",
   price: "99 kr",
+  object: "nr.01",
   key: '20',
-  type: 'card'
 },
-{
-  img: a1,
-  alt: "Reload page.",
-  info: "This is a really nice painting",
-  price: "99 kr",
-  key: '21',
-  type: 'card'
-},
-{
-  img: a1,
-  alt: "Reload page.",
-  info: "This is a really nice painting",
-  price: "99 kr",
-  key: '22',
-  type: 'card'
-},
-{
-  img: a1,
-  alt: "Reload page.",
-  info: "This is a really nice painting",
-  price: "99 kr",
-  key: '23',
-  type: 'card'
-},
-
-
 ]
 export { Shopdata }

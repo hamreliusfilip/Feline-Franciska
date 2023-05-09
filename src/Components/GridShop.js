@@ -24,14 +24,14 @@ const GridShop = () => {
     setScrollLeft2(ref2.current.scrollLeft);
   };
 
-  const Shopdata1 = Shopdata.slice(0, Shopdata.length / 2).map(item => ({...item, info: item.info, price: item.price}));
-  const Shopdata2 = Shopdata.slice(Shopdata.length / 2).map(item => ({...item, info: item.info, price: item.price}));
+  const Shopdata1 = Shopdata.slice(0, Shopdata.length / 2).map(item => ({...item, info: item.info, price: item.price, object: item.object}));
+  const Shopdata2 = Shopdata.slice(Shopdata.length / 2).map(item => ({...item, info: item.info, price: item.price, object: item.object}));
 
   return (
     <div>
       <Wrapper>
         <ButtonWrapperLeft disabled={scrollLeft1 === 0} onClick={() => handleScroll1(-280)}>
-            <ImageLeft src="" alt = "arrow" />
+            <ImageLeft src="../Bilder/arrow.svg" alt = "arrow" />
         </ButtonWrapperLeft>
         <Total ref={ref1}>
           {Shopdata1.map((image) => (
@@ -41,18 +41,19 @@ const GridShop = () => {
                 style={{backgroundImage: `url(${image.img})` }}
                 alt={image.alt}
                 info={image.info}
+                object={image.object}
                 price={image.price}
             />
           ))}
         </Total>
         <ButtonWrapperRight disabled={scrollLeft1 === ref1.current.scrollWidth - ref1.current.clientWidth} onClick={() => handleScroll1(280)}>
-            <ImageRight src="" alt = "arrow"/>
+            <ImageRight src="../Bilder/arrow.svg" alt = "arrow"/>
         </ButtonWrapperRight>
       </Wrapper>
 
       <Wrapper>
         <ButtonWrapperLeft disabled={scrollLeft2 === 0} onClick={() => handleScroll2(-280)}>
-            <ImageLeft src="" alt = "arrow"/>
+            <ImageLeft src="../Bilder/arrow.svg" alt = "arrow"/>
         </ButtonWrapperLeft>
         <Total ref={ref2}>
           {Shopdata2.map((image) => (
@@ -62,12 +63,13 @@ const GridShop = () => {
                 style={{backgroundImage: `url(${image.img})` }}
                 alt={image.alt}
                 info={image.info}
+                object={image.object}
                 price={image.price}
             />
           ))}
         </Total >
         <ButtonWrapperRight disabled={scrollLeft2 === ref2.current.scrollWidth - ref2.current.clientWidth} onClick={() => handleScroll2(280)}>
-            <ImageRight src="" alt = "arrow"/>
+            <ImageRight src="../Bilder/arrow.svg" alt = "arrow"/>
         </ButtonWrapperRight>
       </Wrapper>
     </div>
@@ -82,17 +84,12 @@ const ButtonWrapperLeft = styled.button`
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: 999!important;
-  background-color: white; 
-  opacity: 0;
-  height: 70%;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 15px;
+  opacity: 0.6;
 
   &:hover {
-    opacity: 0.2;
+    opacity: 1;
     transition: 0.5s;
   }
 `
@@ -103,34 +100,28 @@ const ButtonWrapperRight = styled.button`
   right: 0;
   bottom: 0;
   z-index: 999!important;
-  background-color: white; 
-  opacity: 0;
-  height: 70%;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 15px;
+  opacity: 0.6;
 
   &:hover {
-    opacity: 0.2;
+    opacity: 1;
     transition: 0.5s;
   }
 `
 const ImageLeft = styled.img`
   right:0;
   transform: scaleX(-1);
-  height: 10px;
-  width: 30px;
+  height: 100px;
+  width: auto;
 `
 const ImageRight = styled.img`
   left: 0;
   cursor: pointer;
-  height: 10px;
-  width: 30px;
+  height: 100px;
+  width: auto;
 `
 const Total = styled.div`
   position: relative;
-  z-index: 999!important;
+  z-index: 950;
   overflow: scroll;
   display: flex;
   color: #DCDCDC;
@@ -140,18 +131,16 @@ const Total = styled.div`
   display: none;
 }
 `
-
 const Wrapper = styled.div`
 margin-top: 1%;
 width: 100vw;
 position: relative;
 `
-
 const Box = styled.div`
-  max-width: 320px;
-  max-height: 320px;
-  min-width: 320px;
-  min-height: 320px;
+  max-width: 420px;
+  max-height: 420px;
+  min-width: 420px;
+  min-height: 420px;
   margin-right: 20px;
   background-size: cover;
   background-position: center;
@@ -159,7 +148,7 @@ const Box = styled.div`
 
   &:hover {
     &::before {
-      content: "${props => props.info} ${props => props.price}";
+      content: "${props => props.info} ${props => props.price} ${props => props.object}";
       position: absolute;
       top: 0;
       left: 0;
@@ -170,7 +159,8 @@ const Box = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
+      text-align: center;
+      font-size: 2.5em;
       font-weight: bold;
     }
   }

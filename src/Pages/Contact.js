@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import Menu from '../Components/Menu';
 import Footer from '../Components/Footer';
@@ -52,6 +52,11 @@ function Contact() {
 }
 
 export default Contact;
+
+const fadeIn = keyframes`
+from { opacity: 0; }
+to { opacity: 1; }
+`
 
 const ProfileWrapper = styled.div`
   display: flex;
@@ -151,6 +156,7 @@ border: 2px solid white;
 `
 const ViewLargeImage = styled.div`
   position: fixed;
+  animation: ${fadeIn} 0.3s ease-in-out;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
