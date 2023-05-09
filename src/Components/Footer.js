@@ -15,7 +15,6 @@ function Footer() {
           <li><NavLink to="/Shop">SHOP</NavLink></li>
         </ul>
       </Nav>
-      <Logo src="./logga/MAIN.png" alt="" />
       <Disclaimer>© 2023 FELINE & FRANCISKA</Disclaimer>
     </Wrapper>
   )
@@ -33,13 +32,7 @@ const Wrapper = styled.div`
   align-items: center;
   border-top: 1px solid white;
   padding-top: 2em;
-`;
-
-const Logo = styled.img`
-  height: 125px;
-  width: 125px;
-  margin-right: 3%;
-`;
+`
 
 const Nav = styled.nav`
   flex: 1;

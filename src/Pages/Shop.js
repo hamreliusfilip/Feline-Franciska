@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Menu from '../Components/Menu';
 import GridShop from '../Components/GridShop';
 import Footer from '../Components/Footer';
-import ContactForm from '../Components/ContactForm';
+import ShopForm from '../Components/ShopForm';
 
 function Shop() {
   return (
@@ -12,7 +12,7 @@ function Shop() {
       <Menu title="SHOP" />
       <Wrapper>
       <GridShop /> 
-      <ContactForm /> 
+      <ShopForm /> 
       </Wrapper>
       <Footer />
     </Container>

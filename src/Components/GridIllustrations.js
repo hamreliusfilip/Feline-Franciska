@@ -1,29 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 import { Illustrationsdata } from '../data/Illustrationsdata'
 
+
+
 function GridIllustrations () {
+
+  const [blurValue, setBlurValue] = useState(0);
   const [viewImage, setViewImage] = useState(Illustrationsdata[0].img);
   const [viewImageAlt, setViewImageAlt] = useState(Illustrationsdata[0].alt);
   const [viewImageInfo, setViewImageInfo] = useState(Illustrationsdata[0].info);
   const [showViewLargeImage, setShowViewLargeImage] = useState(false);
 
+  useEffect(() => {
+    if (showViewLargeImage) {
+      document.body.style.overflow = "hidden";
+      setBlurValue(10);
+    } else {
+      document.body.style.overflow = "auto";
+      setBlurValue(0);
+    }
+  }, [showViewLargeImage, setBlurValue]);
+
+
   return (
     <div>
-      {showViewLargeImage && (
-        <ViewLargeImage>
-          <ImageLarge src={viewImage} alt={viewImageAlt} />
-          <ImageLargeText>{viewImageInfo}</ImageLargeText>
-          <ButtonClose onClick = {() => setShowViewLargeImage(false)}>Close</ButtonClose>
-        </ViewLargeImage>
-      )}
-      <Wrapper>
+        {showViewLargeImage && (
+          <ViewLargeImage>
+            <ImageLarge src={viewImage} alt={viewImageAlt} />
+            <ImageLargeText>{viewImageInfo}</ImageLargeText>
+            <ButtonClose onClick={() => setShowViewLargeImage(false)}>CLOSE</ButtonClose>
+          </ViewLargeImage>
+
+        )}
+      <Wrapper blurValue={blurValue}>
         {Illustrationsdata.map((image) => (
           <GridItem
             key={image.key}
             className={image.type}
-            style={{backgroundImage: `url(${image.img})` }}
+            style={{ backgroundImage: `url(${image.img})` }}
             alt={image.alt}
             onClick={() => {
               setViewImage(image.img);
@@ -46,6 +62,8 @@ const Wrapper = styled.div`
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(400px, 1fr));
   grid-auto-rows: 240px;
+  filter: blur(${props => props.blurValue}px);
+  transition: all 900ms;
 `;
 
 const GridItem = styled.div`
@@ -61,7 +79,7 @@ const GridItem = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #353535;
+  background: black;
   font-size: 3rem;
   color: #fff;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
@@ -82,24 +100,24 @@ const GridItem = styled.div`
 
 const ViewLargeImage = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white; 
-  z-index: 999;
+  z-index: 999!important;
+  padding: 2em;
 `;
 
-const ImageLarge = styled.img`
-min-width: 70%;
-min-height: 70%;
 
-max-width: 70%;
-max-height: auto;
+const ImageLarge = styled.img`
+height: 70vh;
+width: auto;
 `
 
 const ImageLargeText = styled.p`
@@ -110,4 +128,22 @@ font-weight: 600;
 `
 
 const ButtonClose = styled.button`
+position: relative;
+top: 5%;
+font-size: 1em;
+height: 60px;
+width: 150px;
+background-color: white;
+color: black;
+border-radius: 15px;
+cursor: pointer;
+outline: none;
+font-family: raleway-black;
+border: 2px solid black;
+
+&:hover {
+  transition: all 0.3s ease 0s;
+  background-color: black;
+  color: white;
+}
 `

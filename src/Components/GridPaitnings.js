@@ -3,10 +3,7 @@ import styled from "styled-components";
 
 import { Paintingsdata } from '../data/Paintingsdata'
 
-
-
 function GridPaitnings () {
-
   const [blurValue, setBlurValue] = useState(0);
   
   const [viewImage, setViewImage] = useState(Paintingsdata[0].img);
@@ -24,31 +21,28 @@ function GridPaitnings () {
     }
   }, [showViewLargeImage, setBlurValue]);
 
-
   return (
     <div>
-        {showViewLargeImage && (
-          <ViewLargeImage>
-            <ImageLarge src={viewImage} alt={viewImageAlt} />
-            <ImageLargeText>{viewImageInfo}</ImageLargeText>
-            <ButtonClose onClick={() => setShowViewLargeImage(false)}>CLOSE</ButtonClose>
-          </ViewLargeImage>
-
-        )}
+      {showViewLargeImage && (
+        <ViewLargeImage>
+          <ImageLarge src={viewImage} alt={viewImageAlt} />
+          <ImageLargeText>{viewImageInfo}</ImageLargeText>
+          <ButtonClose onClick={() => setShowViewLargeImage(false)}>CLOSE</ButtonClose>
+        </ViewLargeImage>
+      )}
       <Wrapper blurValue={blurValue}>
         {Paintingsdata.map((image) => (
-          <GridItem
-            key={image.key}
-            className={image.type}
-            style={{ backgroundImage: `url(${image.img})` }}
-            alt={image.alt}
-            onClick={() => {
-              setViewImage(image.img);
-              setViewImageAlt(image.alt);
-              setViewImageInfo(image.info);
-              setShowViewLargeImage(true);
-            }}
-          />
+            <GridItem
+              className={image.type}
+              style={{ backgroundImage: `url(${image.img})` }}
+              alt={image.alt}
+              onClick={() => {
+                setViewImage(image.img);
+                setViewImageAlt(image.alt);
+                setViewImageInfo(image.info);
+                setShowViewLargeImage(true);
+              }}
+            />
         ))}
       </Wrapper>
     </div>
@@ -56,6 +50,7 @@ function GridPaitnings () {
 }
 
 export default GridPaitnings;
+
 
 const Wrapper = styled.div`
   padding: 4em;
@@ -80,7 +75,7 @@ const GridItem = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #353535;
+  background: black;
   font-size: 3rem;
   color: #fff;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
@@ -129,25 +124,22 @@ font-weight: 600;
 `
 
 const ButtonClose = styled.button`
-padding: 1.3em 3em;
-font-size: 12px;
-text-transform: uppercase;
-letter-spacing: 2.5px;
-color: #000;
-background-color: #fff;
-border: none;
-border-radius: 45px;
-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-transition: all 0.3s ease 0s;
+position: relative;
+top: 5%;
+font-size: 1em;
+height: 60px;
+width: 150px;
+background-color: white;
+color: black;
+border-radius: 15px;
 cursor: pointer;
 outline: none;
-font-family: HelveticaAll;
-font-weight: 900;
+font-family: raleway-black;
+border: 2px solid black;
 
 &:hover {
-  background-color: black;
-  color: #fff;
-  box-shadow: 0px 15px 20px grey;
-  color: #fff;
   transition: all 0.3s ease 0s;
+  background-color: black;
+  color: white;
+}
 `

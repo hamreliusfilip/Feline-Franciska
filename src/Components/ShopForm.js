@@ -19,26 +19,26 @@ const ShopForm = () => {
   return (
     <div>
         <Box>
-          <Heading1>SEND ME A MESSAGE</Heading1>
+          <Heading1>Make an inquiry</Heading1>
           <form onSubmit={sendEmail}>
             <Label>
-              <Input type="text" name="name" placeholder="name" required/>
+              <Input type="text" name="subject" placeholder="name" required/>
             </Label>
 
             <Label>
-              <Input type="text" name="email" placeholder="email" required/>
+              <Input type="text" name="name" placeholder="email" required/>
             </Label>
 
             <Label>
-              <Input type="email" name="subject" placeholder="subject" required/>
+              <Input type="email" name="email" placeholder="object" required/>
             </Label>
 
             <Label>
-              <InputText type="text" name="message" placeholder="message" required/>
+              <InputText type="text" name="message" placeholder="other" required/>
             </Label>
 
             <ButtonWrapper>
-              <Button type="submit" value="Send" >SEND</Button>
+              <Button type="submit" value="Send" >send.</Button>
             </ButtonWrapper>
 
           </form>
@@ -51,10 +51,9 @@ const ShopForm = () => {
 const Heading1 = styled.p`
   postion: relative;
   font-family: 'Raleway-Black';
-  font-size: 3em;
+  font-size: 5em;
   color: #DCDCDC;
-  text-align: left;
-  margin-left: 40px;
+  text-align: center;
 
   @media (max-width: 600px) {
     font-size: 2em;

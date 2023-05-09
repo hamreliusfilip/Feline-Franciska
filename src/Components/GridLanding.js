@@ -43,7 +43,7 @@ const GridItem = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #353535;
+  background: black;
   font-size: 3rem;
   color: #fff;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;

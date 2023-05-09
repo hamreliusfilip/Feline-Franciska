@@ -2,33 +2,33 @@ import React from "react";
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const MenuBar = ({title}) => {
-  
+const MenuBar = ({ title }) => {
+
   return (
-    <Wrapper >
+    <Wrapper>
       <LogoStyle src="./logga/MAIN.png" alt="" />
-        <Nav>
-          <ul>
-            <li>
-              <NavLink to="/">HOME</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Illustrations">ILLUSTRATIONS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Shop">SHOP</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Comics">COMICS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Contact">CONTACT</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Paintings">PAINTINGS</NavLink>
-            </li>
-          </ul>
-        </Nav>
+      <Nav>
+        <ul>
+          <li>
+            <NavLink to="/" exact activeClassName="active">HOME</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Illustrations" activeClassName="active">ILLUSTRATIONS</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Paintings" activeClassName="active">PAINTINGS</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Comics" activeClassName="active">COMICS</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Shop" activeClassName="active">SHOP</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Contact" activeClassName="active">CONTACT</NavLink>
+          </li>
+        </ul>
+      </Nav>
     </Wrapper>
   );
 };
@@ -47,6 +47,7 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
 `;
+
 const LogoStyle = styled.img`
   cursor: pointer;
   height: 130px;
@@ -56,6 +57,7 @@ const LogoStyle = styled.img`
   left: 0;
   padding: 30px;
 `;
+
 const Nav = styled.nav`
   padding-top: 150px;
   margin: 0 auto;
@@ -63,9 +65,9 @@ const Nav = styled.nav`
   font-family: Raleway-Black;
   font-size: 1.3em;
   text-decoration: none;
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   ul {
     list-style: none;
@@ -81,7 +83,7 @@ const Nav = styled.nav`
     color: white;
     text-decoration: none;
     cursor: pointer;
-    transition: .2s;
+    transition: color 0.2s;
 
     &.active {
       border-bottom: 4px solid white;
@@ -91,5 +93,4 @@ const Nav = styled.nav`
       color: #1c1c1c;
     }
   }
-  
 `;
