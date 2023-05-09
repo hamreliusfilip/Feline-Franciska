@@ -21,7 +21,7 @@ function Contact() {
         <InfoWrapper>
           <ProfileWrapper>
             <Profile src="../Bilder/ProfilePicture.jpg" alt=" " />
-            <ResumeButton onClick={toggle}> RESUME </ResumeButton>
+            <ResumeButton onClick={toggle}>RESUME</ResumeButton>
           </ProfileWrapper>
           <Info>I’m a swedish designer, illustrator & soon to be librarian. I have a bachlors degree in Visual Communication design and run my sole properiship: Feline & Fransiska. <br></br> <br></br>I’m currently open for work! Do you have an idea that needs to be visualized? For printing, for use on your website or something else entirely? Get in touch with me!</Info>
         </InfoWrapper>
@@ -90,12 +90,11 @@ flex-direction: row;
 justify-content: center;
 `
 const Info = styled.p`
-font-size: 20px;
+font-size: 1.5em;
 color: white;
 font-family: raleway-bold; 
 width: 300px;
-padding-left: 50px;
-margin-top: -5px;
+padding-left: 100px;
 text-align: justify;
 `
 const Profile = styled.img`
