@@ -47,7 +47,7 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1070px) {
     flex-direction: column; 
     height: auto;
     padding-bottom: 10px;
@@ -64,7 +64,7 @@ const LogoStyle = styled.img`
   left: 0;
   padding: 30px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1070px) {
     position: static;
     margin-bottom: 5px;
     height: 220px;
@@ -84,7 +84,7 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1070px) {
       flex-direction: column;
       align-items: center;
     }
@@ -103,7 +103,7 @@ const Nav = styled.nav`
     &.active {
       border-bottom: 4px solid white;
       font-size: 1.4em;
-      @media (max-width: 1000px) {
+      @media (max-width: 1070px) {
         font-size: 2em;
         border-bottom: 0px solid black;
       }
@@ -111,7 +111,7 @@ const Nav = styled.nav`
     &:hover {
       color: #1c1c1c;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 1070px) {
       font-size: 2em;
     }
   }

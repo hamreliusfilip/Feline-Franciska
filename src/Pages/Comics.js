@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   width: 100vw;
   background-color: black;
   position: relative;
+  padding-top: 100px;
 `;
 
 const BackButton = styled.a`
@@ -43,7 +44,7 @@ const BackButton = styled.a`
   text-align: center;
 
   position: absolute;
-  top: -100px;
+  top: 50px;
   left: 17px;
 
   &:hover {

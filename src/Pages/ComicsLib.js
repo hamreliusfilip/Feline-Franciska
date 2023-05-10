@@ -11,16 +11,10 @@ function ComicsLib() {
           <ComicChoice>
             <a href="/Comics">
               <StyledImg src="../Bilder/p1.jpg" alt="Comic 1" />
-              <TextLink to="/Comics" activeClassName="active">
-                1479 : Chapter 1
-              </TextLink>
             </a>
   
             <a href="/Comics">
               <StyledImg src="../Bilder/p1.jpg" alt="Comic 2" />
-              <TextLink to="/Comics" activeClassName="active">
-                1479 : Chapter 2
-              </TextLink>
             </a>
           </ComicChoice>
         </Wrapper>
@@ -50,16 +44,24 @@ const ComicChoice = styled.div`
     justify-content: center;
     align-items: center;
     color: white; 
-`
-const TextLink = styled.p`
-    color: white;
     text-decoration: none;
-    font-family: 'raleway-black';
-    font-size: 2em;
-    padding: 50px;
-    
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 const StyledImg = styled.img`
     height: 500px;
     width: auto;
+    margin: 100px;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    @media (max-width: 1000px) {
+        margin: 30px;
+        margin-top: 50px;
+    }
 `
