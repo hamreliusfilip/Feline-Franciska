@@ -64,9 +64,13 @@ const Wrapper = styled.div`
   align-content: center; 
 
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
     justify-content: flex-start;
     padding: 2em; 
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    padding: 1em;
   }
 `;
 

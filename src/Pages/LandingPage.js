@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 
 function LandingPage() {
   return (
+    <Container>
     <Wrapper> 
       <LogoWrapper>
         <Logo src="./logga/MAIN.png" alt="" />
@@ -39,33 +40,53 @@ function LandingPage() {
       <GridLanding />
       <Footer />
     </Wrapper>
+    </Container> 
   );
 } export default LandingPage;
 
+const Container = styled.div`
+  background-color: black;
+`;
 const Wrapper = styled.div`
   height: 100%;
-  width: 100vw;
-  background-color: black;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+  justify-content: center;
+  overflow-x: hidden;
+`;
 const LogoWrapper = styled.div`
   width: 100%;  
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `
 const TextWrapper = styled.div`
   height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: left;
+
+  @media (max-width: 1000px) {
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+  }
 `
 const Logo = styled.img`
   height: 250px;
   width: 250px;
+
+  @media (max-width: 1000px) {
+    margin-top: 20px;
+  }
 `
 const LogoText = styled.p`
   color: white;
@@ -73,6 +94,10 @@ const LogoText = styled.p`
   font-size: 4em; 
   margin-top: 170px;
   margin-left: 20px;
+
+  @media (max-width: 1000px) {
+    margin-top: -250px;
+  }
 `
 const LogoTextSmall = styled.p`
   color: white;
@@ -91,9 +116,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: grow;
+  flex-wrap: wrap;
   text-align: justify;
-  margin-top: -65px;
 
   ul {
     list-style: none;
@@ -106,12 +130,11 @@ const Nav = styled.nav`
 
   li {
     margin: 0 -5px;
-    
+
     @media (max-width: 1000px) {
       font-size: 1.7em;
-      padding: 5px;
+      padding: 20px;
     }
-
   }
 
   a {
@@ -122,7 +145,6 @@ const Nav = styled.nav`
     text-height: 20px;
     line-height: 1.5;
 
-    
     &:hover {
       color: #1c1c1c;
     }
@@ -134,13 +156,13 @@ const Nav = styled.nav`
   }
 
   @media (max-width: 1000px) {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    width: 100%;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 60%;
-    padding: 10px;
+    margin-top: -200px;
+
+    ul {
+      justify-content: center;
+    }
   }
 `;
 

@@ -27,4 +27,8 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100vw;
   background-color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
 `;

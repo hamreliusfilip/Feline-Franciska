@@ -28,11 +28,21 @@ const Wrapper = styled.div`
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(400px, 1fr));
   grid-auto-rows: 240px;
+  justify-content: center;
+  align-content: center; 
 
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    justify-content: flex-start;
+    padding: 2em; 
   }
-`
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+`;
+
 const GridItem = styled.div`
   &.card-tall {
     grid-row: span 2;
