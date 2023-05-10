@@ -11,7 +11,7 @@ function Footer() {
           <li><NavLink to="/Contact">CONTACT</NavLink></li>
           <li><NavLink to="/Illustrations">ILLUSTRATIONS</NavLink></li>
           <li><NavLink to="/Paintings">PAINTINGS</NavLink></li>
-          <li><NavLink to="/Comics">COMICS</NavLink></li>
+          <li><NavLink to="/ComicsLib">COMICS</NavLink></li>
           <li><NavLink to="/Shop">SHOP</NavLink></li>
         </ul>
       </Nav>
@@ -31,7 +31,11 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   border-top: 1px solid white;
-  padding-top: 2em;
+  padding-top: 20px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 `
 
 const Nav = styled.nav`
@@ -74,6 +78,13 @@ const Nav = styled.nav`
       border-bottom: 4px solid white;
       margin-top: -7px;
     }
+  }
+
+  @media (max-width: 1000px) {
+    margin-left: 0;
+    margin-bottom: 1em;
+    width: 100%;
+    text-align: center;
   }
 `;
 

@@ -7,10 +7,10 @@ const ComicsViwer = () => {
   const [scrollLeft1, setScrollLeft1] = useState(0);
 
   useEffect(() => {
-    const middleScroll = (ref1.current.scrollWidth - ref1.current.clientWidth) * 2;
-    ref1.current.scrollLeft = middleScroll;
+    ref1.current.scrollLeft = 0;
     setScrollLeft1(ref1.current.scrollLeft);
   }, []);
+  
 
   const handleScroll1 = (scrollOffset) => {
     ref1.current.scrollLeft += scrollOffset;
@@ -21,7 +21,7 @@ const ComicsViwer = () => {
     <div>
       <Wrapper>
         <Total ref={ref1}>
-          {Comicsdata.reverse().map((image) => (
+          {Comicsdata.map((image) => (
             <Box
               key={image.key}
               style={{ backgroundImage: `url(${image.img})` }}
@@ -29,26 +29,14 @@ const ComicsViwer = () => {
             />
           ))}
         </Total>
-
         <ButtonWrapper>
-
-          <ButtonWrapperLeft disabled={scrollLeft1 === 0} onClick={() => handleScroll1(-280)}>
-            <ImageLeft>PREV</ImageLeft>
+          <ButtonWrapperLeft disabled={scrollLeft1 === 0} onClick={() => handleScroll1(-520)}>
+            <TextLeft>PREV</TextLeft>
           </ButtonWrapperLeft>
-
-          <Circle /> 
-          <Circle /> 
-          <Circle /> 
-          <Circle /> 
-          <Circle />
-          <Circle />
-
-          <ButtonWrapperRight disabled={scrollLeft1 === ref1.current.scrollWidth - ref1.current.clientWidth} onClick={() => handleScroll1(280)}>
-            <ImageRight>NEXT</ImageRight>
+          <ButtonWrapperRight disabled={scrollLeft1 === ref1.current.scrollWidth - ref1.current.clientWidth} onClick={() => handleScroll1(520)}>
+            <TextRight>NEXT</TextRight>
           </ButtonWrapperRight>
-
         </ButtonWrapper>
-
       </Wrapper>
     </div>
   );
@@ -57,14 +45,6 @@ const ComicsViwer = () => {
 export { Comicsdata }
 export default ComicsViwer
 
-const Circle = styled.div`
-color: white;
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background-color: white;
-margin: 0 7px;
-`
 const ButtonWrapper = styled.div`
   position: abolute;
   z-index: 999!important;
@@ -87,19 +67,22 @@ const ButtonWrapperRight = styled.button`
   all: unset;
   padding-left: 10px;
 `
-const ImageLeft = styled.p`
+const TextLeft = styled.p`
   right:0;
   height: 10px;
   width: 30px;
   color: white;
   pointer: cursor;
+  font-family: 'Raleway-Black';
+  padding-right: 30px;
 `
-const ImageRight = styled.p`
+const TextRight = styled.p`
   left: 0;
   cursor: pointer;
   height: 10px;
   width: 30px;
   color: white;
+  font-family: 'Raleway-Black';
 `
 const Total = styled.div`
   position: relative;
@@ -119,10 +102,10 @@ const Wrapper = styled.div`
   position: relative;
 `
 const Box = styled.div`
-  min-width: 32em;
-  min-height: 44em;
-  max-width: 32em;
-  max-height: 44em;
+  min-width: 500px;
+  min-height: 720px;
+  max-width: 500px;
+  max-height: 720px;
 
   margin-right: 20px;
   background-size: cover;

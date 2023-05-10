@@ -60,7 +60,17 @@ const Wrapper = styled.div`
   grid-auto-rows: 240px;
   filter: blur(${props => props.blurValue}px);
   transition: all 900ms;
-`
+  justify-content: center;
+  align-content: center; 
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    justify-content: flex-start;
+    padding: 2em; 
+  }
+`;
+
+
 const GridItem = styled.div`
   &.card-tall {
     grid-row: span 2;
@@ -106,10 +116,20 @@ const ViewLargeImage = styled.div`
   background-color: white; 
   z-index: 999!important;
   padding: 2em;
+
+  @media (max-width: 1000px) {
+    width: 90vw;
+    height: auto;
+  }
 `
 const ImageLarge = styled.img`
-height: 70vh;
-width: auto;
+  height: 70vh;
+  width: auto;
+
+  @media (max-width: 1000px) {
+    width: 90vw;
+    height: auto;
+  }
 `
 const ImageLargeText = styled.p`
 font-size: 1.2em;

@@ -52,9 +52,8 @@ const Heading1 = styled.p`
   postion: relative;
   font-family: 'Raleway-Black';
   font-size: 3em;
-  color: #DCDCDC;
-  text-align: left;
-  margin-left: 40px;
+  color: white;
+  text-align: center;
 
   @media (max-width: 600px) {
     font-size: 2em;

@@ -54,17 +54,15 @@ function Contact() {
 export default Contact;
 
 const fadeIn = keyframes`
-from { opacity: 0; }
-to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 `
-
 const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
-
 const WrapperContactInfo = styled.div`
   display: flex;
   flex-direction: row;
@@ -88,71 +86,76 @@ const Wrapper = styled.div`
   height: 2000px; 
   width: 100vw;
   background-color: black;
+  padding-top: 50px; 
   `
 const InfoWrapper = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `
 const Info = styled.p`
-font-size: 1.5em;
-color: white;
-font-family: raleway-bold; 
-width: 300px;
-padding-left: 100px;
-text-align: justify;
+  font-size: 1.5em;
+  color: white;
+  font-family: raleway-bold; 
+  width: 300px;
+  padding-left: 100px;
+  text-align: justify;
 `
 const Profile = styled.img`
-height: 400px;
-width: 300px;
-border-radius: 5%;
-object-fit: cover;
+  height: 400px;
+  width: 300px;
+  border-radius: 5%;
+  object-fit: cover;
 `
 const Heading = styled.h1`
-font-size: 50px;
-color: white;
-font-family: raleway-black; 
-text-align: center;
+  font-size: 50px;
+  color: white;
+  font-family: raleway-black; 
+  text-align: center;
+
+  @media (max-width: 1000px) {
+    display: none; 
+}
 `
 const ResumeButton = styled.button`
-position: relative;
-top: 5%;
-font-size: 1em;
-height: 60px;
-width: 300px;
-background-color: black;
-color: white;
-border-radius: 15px;
-cursor: pointer;
-outline: none;
-font-family: raleway-black;
-border: 2px solid white;
+  position: relative;
+  top: 5%;
+  font-size: 1em;
+  height: 60px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  font-family: raleway-black;
+  border: 2px solid white;
 
-&:hover {
-  transition: all 0.3s ease 0s;
-  background-color: white;
-  color: black;
-}
+  &:hover {
+    transition: all 0.3s ease 0s;
+    background-color: white;
+    color: black;
+  }
 `
 const ButtonClose = styled.button`
-position: relative;
-top: 4%;
-font-size: 1em;
-height: 60px;
-width: 300px;
-background-color: black;
-color: white;
-border-radius: 15px;
-cursor: pointer;
-outline: none;
-font-family: raleway-black;
-border: 2px solid white;
+  position: relative;
+  top: 4%;
+  font-size: 1em;
+  height: 60px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  font-family: raleway-black;
+  border: 2px solid white;
 
-&:hover {
-  transition: all 0.3s ease 0s;
-  background-color: white;
-  color: black;
-}
+  &:hover {
+    transition: all 0.3s ease 0s;
+    background-color: white;
+    color: black;
+  }
 `
 const ViewLargeImage = styled.div`
   position: fixed;

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import Menu from '../Components/Menu';
 import ComicsViwer from '../Components/ComicsViwer';
 import Footer from '../Components/Footer';
@@ -8,12 +7,12 @@ import Footer from '../Components/Footer';
 function Comics() {
   return (
     <Container>
-      <Menu title="COMICS" /> 
-  
-      <Wrapper> 
-      <ComicsViwer />
+      <Menu title="COMICS" />
+      <Wrapper>
+        <BackButton href="/ComicsLib">BACK</BackButton>
+        <ComicsViwer />
       </Wrapper>
-      <Footer/> 
+      <Footer />
     </Container>
   );
 }
@@ -24,9 +23,32 @@ const Container = styled.div`
   height: 100%;
   width: 100vw;
   background-color: black;
-`
+`;
+
 const Wrapper = styled.div`
-  height: 2000px; 
   width: 100vw;
   background-color: black;
-`
+  position: relative;
+`;
+
+const BackButton = styled.a`
+  color: white;
+  text-decoration: none;
+  font-family: 'raleway-black';
+  font-size: 1em;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+
+  position: absolute;
+  top: -100px;
+  left: 17px;
+
+  &:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+  }
+`;

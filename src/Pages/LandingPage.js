@@ -26,7 +26,7 @@ function LandingPage() {
             <NavLink to="/Shop">SHOP</NavLink>
           </li>
           <li>
-            <NavLink to="/Comics">COMICS</NavLink>
+            <NavLink to="/ComicsLib">COMICS</NavLink>
           </li>
           <li>
             <NavLink to="/Contact">CONTACT</NavLink>
@@ -106,6 +106,12 @@ const Nav = styled.nav`
 
   li {
     margin: 0 -5px;
+    
+    @media (max-width: 1000px) {
+      font-size: 1.7em;
+      padding: 5px;
+    }
+
   }
 
   a {
@@ -116,6 +122,7 @@ const Nav = styled.nav`
     text-height: 20px;
     line-height: 1.5;
 
+    
     &:hover {
       color: #1c1c1c;
     }
@@ -124,6 +131,16 @@ const Nav = styled.nav`
       border-bottom: 4px solid white;
       margin-top: -7px;
     }
+  }
+
+  @media (max-width: 1000px) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+    padding: 10px;
   }
 `;
 

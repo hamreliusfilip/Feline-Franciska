@@ -4,6 +4,7 @@ import Painting from './Pages/Painting';
 import Comics from './Pages/Comics';
 import Contact from './Pages/Contact';
 import Illustration from './Pages/Illustration';
+import ComicsLib from './Pages/ComicsLib';
 
 import {
   BrowserRouter as Router,
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Paintings" element={<Painting />} />
         <Route path="/Illustrations" element={<Illustration />} />
         <Route path="/Comics" element={<Comics />} />
+        <Route path="/ComicsLib" element={<ComicsLib />} />
         <Route path="/Shop" element={<Shop />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>

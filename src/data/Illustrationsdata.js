@@ -60,14 +60,14 @@ const Illustrationsdata = [
   alt: "Reload page.",
   info: "Floating, 2021. Digital.",
   key: '14',
-  type: 'card-wide'
+  type: 'card'
 },
 {
   img: b5,
   alt: "Reload page.",
   info: "Small cabins, 2021. Digital.",
   key: '15',
-  type: 'card'
+  type: 'card-wide'
 },
 {
   img: b6,

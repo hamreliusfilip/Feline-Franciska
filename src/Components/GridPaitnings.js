@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { Paintingsdata } from '../data/Paintingsdata'
 
 function GridPaitnings () {
+
   const [blurValue, setBlurValue] = useState(0);
-  
   const [viewImage, setViewImage] = useState(Paintingsdata[0].img);
   const [viewImageAlt, setViewImageAlt] = useState(Paintingsdata[0].alt);
   const [viewImageInfo, setViewImageInfo] = useState(Paintingsdata[0].info);
@@ -23,34 +23,34 @@ function GridPaitnings () {
 
   return (
     <div>
-      {showViewLargeImage && (
-        <ViewLargeImage>
-          <ImageLarge src={viewImage} alt={viewImageAlt} />
-          <ImageLargeText>{viewImageInfo}</ImageLargeText>
-          <ButtonClose onClick={() => setShowViewLargeImage(false)}>CLOSE</ButtonClose>
-        </ViewLargeImage>
-      )}
+        {showViewLargeImage && (
+          <ViewLargeImage>
+            <ImageLarge src={viewImage} alt={viewImageAlt} />
+            <ImageLargeText>{viewImageInfo}</ImageLargeText>
+            <ButtonClose onClick={() => setShowViewLargeImage(false)}>CLOSE</ButtonClose>
+          </ViewLargeImage>
+
+        )}
       <Wrapper blurValue={blurValue}>
         {Paintingsdata.map((image) => (
-            <GridItem
-              className={image.type}
-              style={{ backgroundImage: `url(${image.img})` }}
-              alt={image.alt}
-              onClick={() => {
-                setViewImage(image.img);
-                setViewImageAlt(image.alt);
-                setViewImageInfo(image.info);
-                setShowViewLargeImage(true);
-              }}
-            />
+          <GridItem
+            key={image.key}
+            className={image.type}
+            style={{ backgroundImage: `url(${image.img})` }}
+            alt={image.alt}
+            onClick={() => {
+              setViewImage(image.img);
+              setViewImageAlt(image.alt);
+              setViewImageInfo(image.info);
+              setShowViewLargeImage(true);
+            }}
+          />
         ))}
       </Wrapper>
     </div>
   );
 }
-
 export default GridPaitnings;
-
 
 const Wrapper = styled.div`
   padding: 4em;
@@ -60,7 +60,16 @@ const Wrapper = styled.div`
   grid-auto-rows: 240px;
   filter: blur(${props => props.blurValue}px);
   transition: all 900ms;
+  justify-content: center;
+  align-content: center; 
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    justify-content: flex-start;
+    padding: 2em; 
+  }
 `;
+
 
 const GridItem = styled.div`
   &.card-tall {
@@ -92,8 +101,7 @@ const GridItem = styled.div`
     box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
     transform: translateY(-3px) scale(1);
   }
-`;
-
+`
 const ViewLargeImage = styled.div`
   position: fixed;
   top: 50%;
@@ -108,21 +116,27 @@ const ViewLargeImage = styled.div`
   background-color: white; 
   z-index: 999!important;
   padding: 2em;
-`;
 
-
-const ImageLarge = styled.img`
-height: 70vh;
-width: auto;
+  @media (max-width: 1000px) {
+    width: 90vw;
+    height: auto;
+  }
 `
+const ImageLarge = styled.img`
+  height: 70vh;
+  width: auto;
 
+  @media (max-width: 1000px) {
+    width: 90vw;
+    height: auto;
+  }
+`
 const ImageLargeText = styled.p`
 font-size: 1.2em;
 font-family: HelveticaAll; 
 color: black;
 font-weight: 600;
 `
-
 const ButtonClose = styled.button`
 position: relative;
 top: 5%;
