@@ -7,7 +7,7 @@ const ShopForm = () => {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_aya5557', 'template_kg7cebk', e.target, 'RYDwVvTLPB7zm-oNA')
+    emailjs.sendForm('service_aya5557', 'template_0qb2ge1', e.target, 'RYDwVvTLPB7zm-oNA')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -22,19 +22,19 @@ const ShopForm = () => {
           <Heading1>Make an inquiry</Heading1>
           <form onSubmit={sendEmail}>
             <Label>
-              <Input type="text" name="subject" placeholder="name" required/>
+              <Input type="text" name="name" placeholder="name" required/>
             </Label>
 
             <Label>
-              <Input type="text" name="name" placeholder="email" required/>
+              <Input type="email" name="email" placeholder="email" required/>
             </Label>
 
             <Label>
-              <Input type="email" name="email" placeholder="object nr." required/>
+              <Input type="text" name="object" placeholder="object nr." required/>
             </Label>
 
             <Label>
-              <InputText type="text" name="message" placeholder="other" required/>
+              <InputText type="text" name="other" placeholder="other" required/>
             </Label>
 
             <ButtonWrapper>
@@ -92,6 +92,7 @@ const Input = styled.input`
   caret-color: white;
   background-color: black;
   padding: 5px;
+  color: white;
   transition: .5s linear;
   font-family: 'Raleway-Black';
   letter-spacing: 1px;
@@ -115,6 +116,7 @@ const InputText = styled.textarea`
   max-width: 85%;
   height: 30px;
   resize: vertical; 
+  text-color: white;
   max-height: 120px;
   font-size: 0.6em;
   font-weight: bold;
@@ -132,8 +134,8 @@ const InputText = styled.textarea`
   margin:10px;
 
   &:focus {
-    border: 2px solid #DCDCDC;
-    caret-color: #DCDCDC;
+    border: 2px solid white;
+    caret-color: white;
     color: #DCDCDC;
     border-radius: 15px;
   }
@@ -153,7 +155,7 @@ const Label = styled.label`
   font-weight: bold;
   padding: 20px 20px 20px 20px;
   font-family: 'Raleway-Black';
-  text-color: #DCDCDC;
+  text-color: white;
   max-width:700px;
   text-decoration: none;
 `

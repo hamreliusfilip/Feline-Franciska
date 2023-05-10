@@ -50,7 +50,6 @@ function GridIllustrations () {
     </div>
   );
 }
-
 export default GridIllustrations;
 
 const Wrapper = styled.div`
@@ -61,8 +60,7 @@ const Wrapper = styled.div`
   grid-auto-rows: 240px;
   filter: blur(${props => props.blurValue}px);
   transition: all 900ms;
-`;
-
+`
 const GridItem = styled.div`
   &.card-tall {
     grid-row: span 2;

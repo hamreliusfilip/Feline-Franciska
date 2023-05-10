@@ -7,7 +7,7 @@ const ShopForm = () => {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_aya5557', 'template_kg7cebk', e.target, 'RYDwVvTLPB7zm-oNA')
+    emailjs.sendForm('service_aya5557', 'template_0qb2ge1', e.target, 'RYDwVvTLPB7zm-oNA')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -26,15 +26,15 @@ const ShopForm = () => {
             </Label>
 
             <Label>
-              <Input type="text" name="email" placeholder="email" required/>
+              <Input type="email" name="email" placeholder="email" required/>
             </Label>
 
             <Label>
-              <Input type="email" name="subject" placeholder="subject" required/>
+              <Input type="text" name="object" placeholder="subject" required/>
             </Label>
 
             <Label>
-              <InputText type="text" name="message" placeholder="message" required/>
+              <InputText type="text" name="other" placeholder="message" required/>
             </Label>
 
             <ButtonWrapper>
