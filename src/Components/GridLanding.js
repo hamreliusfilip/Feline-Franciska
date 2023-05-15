@@ -5,7 +5,6 @@ import { Landingdata } from '../data/Landingdata'
 
 function GridLanding () {
   return (
-    <div>
       <Wrapper>
         {Landingdata.map((image) => (
           <GridItem
@@ -16,7 +15,6 @@ function GridLanding () {
           />
         ))}
       </Wrapper>
-    </div>
   );
 }
 
@@ -32,14 +30,9 @@ const Wrapper = styled.div`
   align-content: center; 
 
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     justify-content: flex-start;
     padding: 2em; 
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    padding: 1em;
   }
 `;
 
@@ -68,9 +61,4 @@ const GridItem = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  &:hover {
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    transform: translateY(-3px) scale(1);
-  }
 `

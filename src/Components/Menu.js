@@ -8,7 +8,7 @@ const MenuBar = () => {
     <Wrapper>
       <LogoStyle src="./logga/MAIN.png" alt="" />
       <Nav>
-        <ul>
+  
           <li>
             <NavLink to="/" exact activeClassName="active">HOME</NavLink>
           </li>
@@ -27,7 +27,7 @@ const MenuBar = () => {
           <li>
             <NavLink to="/Contact" activeClassName="active">CONTACT</NavLink>
           </li>
-        </ul>
+    
       </Nav>
     </Wrapper>
   );
@@ -36,6 +36,7 @@ const MenuBar = () => {
 export default MenuBar;
 
 const Wrapper = styled.div`
+  position: relative;
   padding-top: 40px; 
   padding-bottom: 100px;
   width: 100vw;
@@ -45,13 +46,11 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 
   @media (max-width: 1070px) {
     flex-direction: column; 
     height: auto;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    justify-content: center;
   }
 `;
 
@@ -66,28 +65,21 @@ const LogoStyle = styled.img`
 
   @media (max-width: 1070px) {
     position: static;
-    margin-bottom: 5px;
-    height: 220px;
-    width: 220px;
+    height: 150px;
+    width: 150px;
   }
 `
 const Nav = styled.nav`
-  padding-top: 20px;
   margin: 0 auto;
-  color: white;
   font-family: Raleway-Black;
-  font-size: 1.3em;
-  text-decoration: none;
 
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
+  list-style: none;
+  display: flex;
 
-    @media (max-width: 1070px) {
-      flex-direction: column;
-      align-items: center;
-    }
+  @media (max-width: 1070px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   li {
@@ -98,21 +90,23 @@ const Nav = styled.nav`
     color: white;
     text-decoration: none;
     cursor: pointer;
-    transition: color 0.2s;
 
     &.active {
       border-bottom: 4px solid white;
       font-size: 1.4em;
+
       @media (max-width: 1070px) {
-        font-size: 2em;
-        border-bottom: 0px solid black;
+        font-size: 1.3em;
+        line-height: 1.5;
+        border-bottom: 2px solid white;
       }
     }
     &:hover {
       color: #1c1c1c;
     }
     @media (max-width: 1070px) {
-      font-size: 2em;
+      font-size: 1.3em;
+      line-height: 1.5;
     }
   }
 `;

@@ -1,36 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 
-import { Paintingsdata } from '../data/Paintingsdata'
+import { Paintingsdata } from '../data/Paintingsdata';
 
-function GridPaitnings () {
+function GridPaitnings() {
+  const [state, setState] = useState({
+    blurValue: 0,
+    viewImage: {
+      img: Paintingsdata[0].img,
+      alt: Paintingsdata[0].alt,
+      info: Paintingsdata[0].info
+    },
+    showViewLargeImage: false
+  });
 
-  const [blurValue, setBlurValue] = useState(0);
-  const [viewImage, setViewImage] = useState(Paintingsdata[0].img);
-  const [viewImageAlt, setViewImageAlt] = useState(Paintingsdata[0].alt);
-  const [viewImageInfo, setViewImageInfo] = useState(Paintingsdata[0].info);
-  const [showViewLargeImage, setShowViewLargeImage] = useState(false);
+  const { blurValue, viewImage, showViewLargeImage } = state;
 
   useEffect(() => {
     if (showViewLargeImage) {
       document.body.style.overflow = "hidden";
-      setBlurValue(10);
+      setState(prevState => ({ ...prevState, blurValue: 10 }));
     } else {
       document.body.style.overflow = "auto";
-      setBlurValue(0);
+      setState(prevState => ({ ...prevState, blurValue: 0 }));
     }
-  }, [showViewLargeImage, setBlurValue]);
+  }, [showViewLargeImage, setState]);
 
   return (
-    <div>
-        {showViewLargeImage && (
-          <ViewLargeImage>
-            <ImageLarge src={viewImage} alt={viewImageAlt} />
-            <ImageLargeText>{viewImageInfo}</ImageLargeText>
-            <ButtonClose onClick={() => setShowViewLargeImage(false)}>CLOSE</ButtonClose>
-          </ViewLargeImage>
-
-        )}
+    <>
+      {showViewLargeImage && (
+        <ViewLargeImage>
+          <ImageLarge src={viewImage.img} alt={viewImage.alt} />
+          <ImageLargeText>{viewImage.info}</ImageLargeText>
+          <ButtonClose onClick={() => setState(prevState => ({ ...prevState, showViewLargeImage: false }))}>
+            CLOSE
+          </ButtonClose>
+        </ViewLargeImage>
+      )}
       <Wrapper blurValue={blurValue}>
         {Paintingsdata.map((image) => (
           <GridItem
@@ -39,17 +45,23 @@ function GridPaitnings () {
             style={{ backgroundImage: `url(${image.img})` }}
             alt={image.alt}
             onClick={() => {
-              setViewImage(image.img);
-              setViewImageAlt(image.alt);
-              setViewImageInfo(image.info);
-              setShowViewLargeImage(true);
+              setState(prevState => ({
+                ...prevState,
+                viewImage: {
+                  img: image.img,
+                  alt: image.alt,
+                  info: image.info
+                },
+                showViewLargeImage: true
+              }));
             }}
           />
         ))}
       </Wrapper>
-    </div>
+    </>
   );
 }
+
 export default GridPaitnings;
 
 const Wrapper = styled.div`
@@ -100,11 +112,6 @@ const GridItem = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  &:hover {
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    transform: translateY(-3px) scale(1);
-  }
 `
 const ViewLargeImage = styled.div`
   position: fixed;

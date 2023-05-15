@@ -24,7 +24,7 @@ export default Footer;
 
 const Wrapper = styled.div`
   position: relative;
-  width: 100vw;
+  width: 100%;
   background-color: black;
   display: flex;
   flex-direction: row;
@@ -47,10 +47,7 @@ const Nav = styled.nav`
   flex-direction: row;
 
   @media (max-width: 1250px) {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 0;
-    margin-right: 0;
+
   }
 
   ul {
@@ -63,7 +60,6 @@ const Nav = styled.nav`
     @media (max-width: 1250px) {
       flex-direction: column;
       align-items: flex-start;
-      padding-left: 0;
     }
   }
 

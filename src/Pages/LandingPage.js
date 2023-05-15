@@ -54,7 +54,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
 `;
 const LogoWrapper = styled.div`
   width: 100%;  
@@ -86,6 +85,8 @@ const Logo = styled.img`
 
   @media (max-width: 1000px) {
     margin-top: 20px;
+    height: 150px;
+    width: 150px;
   }
 `
 const LogoText = styled.p`
@@ -96,7 +97,8 @@ const LogoText = styled.p`
   margin-left: 20px;
 
   @media (max-width: 1000px) {
-    margin-top: -250px;
+    margin-top: -300px;
+    font-size: 2em;
   }
 `
 const LogoTextSmall = styled.p`
@@ -106,6 +108,10 @@ const LogoTextSmall = styled.p`
   font-weight: bold;
   margin-top: -70px;
   margin-left: 22px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `
 const Nav = styled.nav`
   width: 320px;
@@ -118,6 +124,11 @@ const Nav = styled.nav`
   align-items: center;
   flex-wrap: wrap;
   text-align: justify;
+  margin-bottom: 400px;
+
+  @media (max-width: 1000px) {
+    margin-bottom: 1000px;
+  }
 
   ul {
     list-style: none;
@@ -132,7 +143,7 @@ const Nav = styled.nav`
     margin: 0 -5px;
 
     @media (max-width: 1000px) {
-      font-size: 1.7em;
+      font-size: 1em;
       padding: 20px;
     }
   }
@@ -158,7 +169,7 @@ const Nav = styled.nav`
   @media (max-width: 1000px) {
     width: 100%;
     justify-content: center;
-    margin-top: -200px;
+    margin-top: -300px;
 
     ul {
       justify-content: center;

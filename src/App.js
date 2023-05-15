@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import LandingPage from './Pages/LandingPage';
 import Shop from './Pages/Shop';
 import Painting from './Pages/Painting';
@@ -15,6 +17,7 @@ import {
 
 function App() {
   return (
+    <Wrapper>
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -26,7 +29,12 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
       </Routes>
     </Router>
+    </Wrapper> 
   );
 }
 
 export default App;
+
+const Wrapper = styled.div`
+overflow-x: hidden;
+`;
