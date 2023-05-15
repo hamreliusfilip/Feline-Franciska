@@ -18,6 +18,7 @@ function Contact() {
       <Menu title="CONTACT" />
       <Wrapper>
         <Heading>ABOUT</Heading>
+
         <InfoWrapper>
           <ProfileWrapper>
             <Profile src="../Bilder/ProfilePicture.jpg" alt=" " />
@@ -25,12 +26,14 @@ function Contact() {
           </ProfileWrapper>
           <Info>I’m a swedish designer, illustrator & soon to be librarian. I have a bachlors degree in Visual Communication design and run my sole properiship: Feline & Fransiska. <br></br> <br></br>I’m currently open for work! Do you have an idea that needs to be visualized? For printing, for use on your website or something else entirely? Get in touch with me!</Info>
         </InfoWrapper>
+
         {isOpen && (
           <ViewLargeImage>
             <Resume src='../Bilder/DummyCV.png' alt='Please reload the page' />
             <ButtonClose onClick={toggle}> CLOSE </ButtonClose>
           </ViewLargeImage>
         )}
+
         <WrapperContactInfo>
           <ContactForm />
         </WrapperContactInfo>
@@ -76,6 +79,7 @@ const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  margin: 20px;
 `
 const Container = styled.div`
   height: 100%;
@@ -92,6 +96,13 @@ const InfoWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 `
 const Info = styled.p`
   font-size: 1.5em;
@@ -100,6 +111,13 @@ const Info = styled.p`
   width: 300px;
   padding-left: 100px;
   text-align: justify;
+
+  @media (max-width: 1000px) {
+    padding-top: 40px;
+    padding-left: 0px;
+    width: 100%;
+    text-align: center;
+}
 `
 const Profile = styled.img`
   height: 400px;
@@ -136,6 +154,11 @@ const ResumeButton = styled.button`
     background-color: white;
     color: black;
   }
+
+  @media (max-width: 1000px) {
+    margin-top: 30px;
+}
+
 `
 const ButtonClose = styled.button`
   position: relative;
