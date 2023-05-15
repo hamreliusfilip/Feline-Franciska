@@ -36,16 +36,16 @@ const Landingdata = [
   type: 'card'
 },
 {
-  img: a9,
-  alt: "Reload page.",
-  key: '9',
-  type: 'card-wide'
-},
-{
   img: a10,
   alt: "Reload page.",
   key: '10',
   type: 'card'
+},
+{
+  img: a9,
+  alt: "Reload page.",
+  key: '9',
+  type: 'card-wide'
 },
 {
   img: b1,
@@ -73,14 +73,14 @@ const Landingdata = [
   alt: "Reload page.",
   info: "This is a really nice painting",
   key: '14',
-  type: 'card-wide'
+  type: 'card'
 },
 {
   img: b5,
   alt: "Reload page.",
   info: "This is a really nice painting",
   key: '15',
-  type: 'card'
+  type: 'card-wide'
 },
 {
   img: b6,

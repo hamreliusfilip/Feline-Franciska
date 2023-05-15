@@ -58,8 +58,11 @@ const Nav = styled.nav`
     flex-direction: row;
 
     @media (max-width: 1250px) {
+      /* Adjust the alignment and spacing for mobile */
       flex-direction: column;
       align-items: flex-start;
+      margin-top: 1em;
+      margin-left: 0;
     }
   }
 
@@ -86,10 +89,10 @@ const Nav = styled.nav`
   }
 
   @media (max-width: 1250px) {
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 1em;
+    /* Adjust the margin and width for mobile */
+    margin: 0;
     width: 100%;
+    padding-bottom: 20px;
   }
 `;
 
@@ -103,4 +106,9 @@ const Disclaimer = styled.p`
   margin-top: 1em;
   margin-bottom: 1em;
   font-weight: bold;
+
+  @media (max-width: 1250px) {
+    /* Adjust the padding for mobile */
+    padding: 20px;
+  }
 `;

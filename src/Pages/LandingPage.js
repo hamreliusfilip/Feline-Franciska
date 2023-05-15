@@ -124,10 +124,14 @@ const Nav = styled.nav`
   align-items: center;
   flex-wrap: wrap;
   text-align: justify;
-  margin-bottom: 400px;
+  margin-bottom: 200px;
 
-  @media (max-width: 1000px) {
-    margin-bottom: 1000px;
+  @media (max-width: 1070px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    margin-top: -320px;
   }
 
   ul {
@@ -141,11 +145,6 @@ const Nav = styled.nav`
 
   li {
     margin: 0 -5px;
-
-    @media (max-width: 1000px) {
-      font-size: 1em;
-      padding: 20px;
-    }
   }
 
   a {
@@ -163,18 +162,14 @@ const Nav = styled.nav`
     &.active {
       border-bottom: 4px solid white;
       margin-top: -7px;
+
+      @media (max-width: 1070px) {
+        line-height: 1.5;
+        border-bottom: 2px solid white;
+      }
     }
   }
 
-  @media (max-width: 1000px) {
-    width: 100%;
-    justify-content: center;
-    margin-top: -300px;
-
-    ul {
-      justify-content: center;
-    }
-  }
 `;
 
 
