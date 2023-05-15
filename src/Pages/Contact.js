@@ -200,6 +200,11 @@ const Resume = styled.img`
   height: 80%;
   width: auto;
   object-fit: cover;
+
+  @media (max-width: 1000px) {
+    width: 90vw;
+    height: auto;
+  }
 `
 const StyledA = styled.a`
   postion: relative;
