@@ -144,21 +144,21 @@ const Illustrationsdata = [
   alt: "Reload page.",
   info: "Flower girl, 2021.Digital.",
   key: '6',
-  type: 'card'
-},
-{
-  img: a7,
-  alt: "Reload page.",
-  info: "Dolls, 2018. Digital.",
-  key: '7',
-  type: 'card-wide'
+  type: 'card-tall'
 },
 {
   img: a8,
   alt: "Reload page.",
   info: "Rococo enemies, 2018. Digital.",
   key: '8',
-  type: 'card'
+  type: 'card-tall'
+},
+{
+  img: a7,
+  alt: "Reload page.",
+  info: "Dolls, 2018. Digital.",
+  key: '7',
+  type: 'card-tall'
 },
 {
   img: a9,
@@ -179,7 +179,7 @@ const Illustrationsdata = [
   alt: "Reload page.",
   info: "Butterfly and flower, 2023. Digital.",
   key: '21',
-  type: 'card-wide'
+  type: 'card'
 },
 {
   img: c2,

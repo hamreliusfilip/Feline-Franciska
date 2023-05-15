@@ -45,18 +45,18 @@ const Paintingsdata = [
   type: 'card'
 },
 {
-  img: a4,
-  alt: "Reload page.",
-  info: "Serotonin, It does(n´t) work, 2022. Digital",
-  key: '4',
-  type: 'card-wide'
-},
-{
   img: a5,
   alt: "Reload page.",
   info: "Float 1, 2021. Digital.",
   key: '5',
   type: 'card'
+},
+{
+  img: a4,
+  alt: "Reload page.",
+  info: "Serotonin, It does(n´t) work, 2022. Digital",
+  key: '4',
+  type: 'card-wide'
 },
 {
   img: a6,
@@ -115,18 +115,18 @@ const Paintingsdata = [
   type: 'card'
 },
 {
-  img: b4,
-  alt: "Reload page.",
-  info: "Butterflies 1, 2021. Oil on canvas.",
-  key: '14',
-  type: 'card-wide'
-},
-{
   img: b5,
   alt: "Reload page.",
   info: "Two-faced 2, 2021. Oil on plywood.",
   key: '15',
   type: 'card'
+},
+{
+  img: b4,
+  alt: "Reload page.",
+  info: "Butterflies 1, 2021. Oil on canvas.",
+  key: '14',
+  type: 'card-wide'
 },
 {
   img: b6,

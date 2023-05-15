@@ -73,16 +73,12 @@ const Wrapper = styled.div`
   filter: blur(${props => props.blurValue}px);
   transition: all 900ms;
   justify-content: center;
-  align-content: center; 
+  align-content: center;
 
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    justify-content: flex-start;
-    padding: 2em; 
-  }
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    padding: 1em;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    margin-top: -50px;
+    margin-left: 0px;
   }
 `;
 
