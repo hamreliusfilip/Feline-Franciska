@@ -17,7 +17,6 @@ const ShopForm = () => {
   };
 
   return (
-    <div>
         <Box>
           <Heading1>Make an inquiry</Heading1>
           <form onSubmit={sendEmail}>
@@ -43,7 +42,6 @@ const ShopForm = () => {
 
           </form>
         </Box>
-    </div> 
     )
   }
   export default ShopForm;
@@ -74,6 +72,7 @@ const Box = styled.div`
     height: auto;
     margin: 10px 10px 10px 10px;
     padding: 10px 5px 20px 5px;
+    margin-bottom: 100px;
 }
 `
 const ButtonWrapper = styled.div`

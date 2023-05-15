@@ -129,7 +129,11 @@ const Total = styled.div`
   
   &::-webkit-scrollbar {
   display: none;
-}
+} 
+
+  @media (max-width: 1000px) {
+    margin-top: -100px;
+  }
 `
 const Wrapper = styled.div`
 margin-top: 1%;
@@ -163,5 +167,12 @@ const Box = styled.div`
       font-size: 2.5em;
       font-weight: bold;
     }
+  }
+
+  @media (max-width: 1000px) {
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 200px;
   }
 `;

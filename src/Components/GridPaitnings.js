@@ -80,9 +80,7 @@ const Wrapper = styled.div`
     margin-top: -50px;
     margin-left: 0px;
   }
-`;
-
-
+`
 const GridItem = styled.div`
   &.card-tall {
     grid-row: span 2;
