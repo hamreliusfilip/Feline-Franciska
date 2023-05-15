@@ -131,9 +131,6 @@ const Total = styled.div`
   display: none;
 } 
 
-  @media (max-width: 1000px) {
-    margin-top: -100px;
-  }
 `
 const Wrapper = styled.div`
 margin-top: 1%;
@@ -174,5 +171,7 @@ const Box = styled.div`
     max-height: 200px;
     min-width: 200px;
     min-height: 200px;
+    padding: 20px;
+    margin:10px;
   }
 `;

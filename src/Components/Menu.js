@@ -6,9 +6,10 @@ const MenuBar = () => {
 
   return (
     <Wrapper>
+      <NavLink to="/" exact>
       <LogoStyle src="./logga/MAIN.png" alt="" />
+      </NavLink>
       <Nav>
-  
           <li>
             <NavLink to="/" exact activeClassName="active">HOME</NavLink>
           </li>
