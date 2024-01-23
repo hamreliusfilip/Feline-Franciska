@@ -158,7 +158,7 @@ const Illustrationsdata = [
   alt: "Reload page.",
   info: "Dolls, 2018. Digital.",
   key: '7',
-  type: 'card-tall'
+  type: 'card-wide'
 },
 {
   img: a9,

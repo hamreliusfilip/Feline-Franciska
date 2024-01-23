@@ -15,7 +15,7 @@ function Footer() {
           <li><NavLink to="/Shop">SHOP</NavLink></li>
         </ul>
       </Nav>
-      <Disclaimer>© 2023 FELINE & FRANCISKA</Disclaimer>
+      <Disclaimer>2024 FELINE & FRANCISKA</Disclaimer>
     </Wrapper>
   )
 }

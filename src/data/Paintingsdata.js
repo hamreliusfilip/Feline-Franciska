@@ -20,7 +20,6 @@ import b8 from '../PaintingAssets/Traditional_Painting_08.jpg'
 import b9 from '../PaintingAssets/Traditional_Painting_09.jpg'
 import b10 from '../PaintingAssets/Traditional_Painting_10.jpg'
 
-
 const Paintingsdata = [
 
 {

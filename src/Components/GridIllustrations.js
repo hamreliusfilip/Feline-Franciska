@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
+import { listAll, getDownloadURL, ref } from 'firebase/storage';
+import { storage } from '../firebase';
 
-import { Illustrationsdata } from '../data/Illustrationsdata';
-
-function GridIllustrations() {
+function GridPaintings() {
   const [state, setState] = useState({
     blurValue: 0,
     viewImage: {
-      img: Illustrationsdata[0].img,
-      alt: Illustrationsdata[0].alt,
-      info: Illustrationsdata[0].info
+      img: '',
+      alt: '',
+      info: ''
     },
-    showViewLargeImage: false
+    showViewLargeImage: false,
+    paintingsData: []
   });
 
   const { blurValue, viewImage, showViewLargeImage } = state;
@@ -26,6 +27,31 @@ function GridIllustrations() {
     }
   }, [showViewLargeImage, setState]);
 
+  const fetchImagesFromFirebase = async () => {
+   
+    const storageRef = ref(storage, 'IllustrationAssets/');
+    const imageListRef = await listAll(storageRef);
+
+    const urls = await Promise.all(imageListRef.items.map(async (item) => {
+      const url = await getDownloadURL(item);
+      return url;
+    }));
+
+    setState(prevState => ({ ...prevState, viewImage: { img: urls[0], alt: '', info: '' } }));
+    return urls;
+  };
+
+  useEffect(() => {
+    fetchImagesFromFirebase().then((urls) => {
+      const paintingsData = urls.map((url, index) => ({
+        key: index,
+        img: url,
+      }));
+
+      setState(prevState => ({ ...prevState, paintingsData }));
+    });
+  }, []);
+
   return (
     <>
       {showViewLargeImage && (
@@ -38,7 +64,7 @@ function GridIllustrations() {
         </ViewLargeImage>
       )}
       <Wrapper blurValue={blurValue}>
-        {Illustrationsdata.map((image) => (
+        {state.paintingsData.map((image) => (
           <GridItem
             key={image.key}
             className={image.type}
@@ -62,7 +88,7 @@ function GridIllustrations() {
   );
 }
 
-export default GridIllustrations;
+export default GridPaintings;
 
 const Wrapper = styled.div`
   padding: 4em;
@@ -80,9 +106,7 @@ const Wrapper = styled.div`
     margin-top: -50px;
     margin-left: 0px;
   }
-`;
-
-
+`
 const GridItem = styled.div`
   &.card-tall {
     grid-row: span 2;

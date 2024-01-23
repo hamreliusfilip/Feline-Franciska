@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
+import { listAll, getDownloadURL, ref } from 'firebase/storage';
+import { storage } from '../firebase';
 
-import { Paintingsdata } from '../data/Paintingsdata';
-
-function GridPaitnings() {
+function GridPaintings() {
   const [state, setState] = useState({
     blurValue: 0,
     viewImage: {
-      img: Paintingsdata[0].img,
-      alt: Paintingsdata[0].alt,
-      info: Paintingsdata[0].info
+      img: '',
+      alt: '',
+      info: ''
     },
-    showViewLargeImage: false
+    showViewLargeImage: false,
+    paintingsData: []
   });
 
   const { blurValue, viewImage, showViewLargeImage } = state;
@@ -26,6 +27,31 @@ function GridPaitnings() {
     }
   }, [showViewLargeImage, setState]);
 
+  const fetchImagesFromFirebase = async () => {
+   
+    const storageRef = ref(storage, 'PaintingAssets/');
+    const imageListRef = await listAll(storageRef);
+
+    const urls = await Promise.all(imageListRef.items.map(async (item) => {
+      const url = await getDownloadURL(item);
+      return url;
+    }));
+
+    setState(prevState => ({ ...prevState, viewImage: { img: urls[0], alt: '', info: '' } }));
+    return urls;
+  };
+
+  useEffect(() => {
+    fetchImagesFromFirebase().then((urls) => {
+      const paintingsData = urls.map((url, index) => ({
+        key: index,
+        img: url,
+      }));
+
+      setState(prevState => ({ ...prevState, paintingsData }));
+    });
+  }, []);
+
   return (
     <>
       {showViewLargeImage && (
@@ -38,7 +64,7 @@ function GridPaitnings() {
         </ViewLargeImage>
       )}
       <Wrapper blurValue={blurValue}>
-        {Paintingsdata.map((image) => (
+        {state.paintingsData.map((image) => (
           <GridItem
             key={image.key}
             className={image.type}
@@ -62,7 +88,7 @@ function GridPaitnings() {
   );
 }
 
-export default GridPaitnings;
+export default GridPaintings;
 
 const Wrapper = styled.div`
   padding: 4em;
