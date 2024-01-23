@@ -26,6 +26,7 @@ This website was built using the following technologies:
 
 - React.js for building the UI components.
 - JavaScript for adding interactivity and functionality.
+- Firebase for database solution.
 - Node.js for running the development server.
 - Netflify for hosting the website.
 - Photoshop & Canva for graphical elements (Not the art).
