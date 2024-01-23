@@ -1,24 +1,94 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
+import { listAll, getDownloadURL, ref } from 'firebase/storage';
+import { storage } from '../firebase';
 
-import { Landingdata } from '../data/Landingdata'
+function GridPaintings() {
+  const [state, setState] = useState({
+    blurValue: 0,
+    viewImage: {
+      img: '',
+      alt: '',
+      info: ''
+    },
+    showViewLargeImage: false,
+    paintingsData: []
+  });
 
-function GridLanding () {
+  const { blurValue, viewImage, showViewLargeImage } = state;
+
+  useEffect(() => {
+    if (showViewLargeImage) {
+      document.body.style.overflow = "hidden";
+      setState(prevState => ({ ...prevState, blurValue: 10 }));
+    } else {
+      document.body.style.overflow = "auto";
+      setState(prevState => ({ ...prevState, blurValue: 0 }));
+    }
+  }, [showViewLargeImage, setState]);
+
+  const fetchImagesFromFirebase = async () => {
+   
+    const storageRef = ref(storage, 'LandingAssets/');
+    const imageListRef = await listAll(storageRef);
+
+    const urls = await Promise.all(imageListRef.items.map(async (item) => {
+      const url = await getDownloadURL(item);
+      return url;
+    }));
+
+    setState(prevState => ({ ...prevState, viewImage: { img: urls[0], alt: '', info: '' } }));
+    return urls;
+  };
+
+  useEffect(() => {
+    fetchImagesFromFirebase().then((urls) => {
+      const paintingsData = urls.map((url, index) => ({
+        key: index,
+        img: url,
+      }));
+
+      setState(prevState => ({ ...prevState, paintingsData }));
+    });
+  }, []);
+
   return (
-      <Wrapper>
-        {Landingdata.map((image) => (
+    <>
+      {showViewLargeImage && (
+        <ViewLargeImage>
+          <ImageLarge src={viewImage.img} alt={viewImage.alt} />
+          <ImageLargeText>{viewImage.info}</ImageLargeText>
+          <ButtonClose onClick={() => setState(prevState => ({ ...prevState, showViewLargeImage: false }))}>
+            CLOSE
+          </ButtonClose>
+        </ViewLargeImage>
+      )}
+      <Wrapper blurValue={blurValue}>
+        {state.paintingsData.map((image) => (
           <GridItem
-            key={image.key}s
+            key={image.key}
             className={image.type}
-            style={{backgroundImage: `url(${image.img})` }}
+            style={{ backgroundImage: `url(${image.img})` }}
             alt={image.alt}
+            onClick={() => {
+              setState(prevState => ({
+                ...prevState,
+                viewImage: {
+                  img: image.img,
+                  alt: image.alt,
+                  info: image.info
+                },
+                showViewLargeImage: true
+              }));
+            }}
           />
         ))}
       </Wrapper>
+    </>
   );
 }
 
-export default GridLanding;
+export default GridPaintings;
 
 const Wrapper = styled.div`
   display: grid;
@@ -35,7 +105,6 @@ const Wrapper = styled.div`
     margin-top: -125px;
   }
 `;
-
 const GridItem = styled.div`
   &.card-tall {
     grid-row: span 2;
@@ -60,4 +129,59 @@ const GridItem = styled.div`
   background-repeat: no-repeat;
 
   padding: -1rem;
+`
+const ViewLargeImage = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white; 
+  z-index: 999!important;
+  padding: 2em;
+
+  @media (max-width: 1000px) {
+    width: 90vw;
+    height: auto;
+  }
+`
+const ImageLarge = styled.img`
+  height: 70vh;
+  width: auto;
+
+  @media (max-width: 1000px) {
+    width: 90vw;
+    height: auto;
+  }
+`
+const ImageLargeText = styled.p`
+font-size: 1.2em;
+font-family: HelveticaAll; 
+color: black;
+font-weight: 600;
+`
+const ButtonClose = styled.button`
+position: relative;
+top: 5%;
+font-size: 1em;
+height: 60px;
+width: 150px;
+background-color: white;
+color: black;
+border-radius: 15px;
+cursor: pointer;
+outline: none;
+font-family: raleway-black;
+border: 2px solid black;
+
+&:hover {
+  transition: all 0.3s ease 0s;
+  background-color: black;
+  color: white;
+}
 `
