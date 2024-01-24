@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import GridLanding from '../Components/GridLanding';
+import Grid from '../Components/Grid';
 import Footer from '../Components/Footer';
 
 function LandingPage() {
@@ -37,12 +37,18 @@ function LandingPage() {
           </li>
         </ul>
       </Nav>
-      <GridLanding />
+      <Buff> 
+      <Grid storagePath="LandingAssets/" />
+      </Buff>
       <Footer />
     </Wrapper>
     </Container> 
   );
 } export default LandingPage;
+
+const Buff = styled.div`
+  margin-top: -100px; 
+  `;
 
 const Container = styled.div`
   background-color: black;
@@ -131,7 +137,7 @@ const Nav = styled.nav`
     align-items: center;
     justify-content: center;
     font-size: 1.3em;
-    margin-top: -320px;
+    margin-top: -400px;
   }
 
   ul {

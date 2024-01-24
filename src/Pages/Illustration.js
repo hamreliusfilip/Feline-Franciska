@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-import GridIllustrations from '../Components/GridIllustrations';
+import Grid from '../Components/Grid';
 import Footer from '../Components/Footer';
 import Menu from '../Components/Menu';
 
@@ -11,7 +11,7 @@ function Illustrations() {
     <Container>
       <Menu title="ILLUSTRATIONS" />
       <Wrapper>
-        <GridIllustrations />
+        <Grid storagePath="IllustrationAssets/" />
       </Wrapper>
       <Footer />
     </Container>

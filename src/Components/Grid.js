@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { listAll, getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '../firebase';
 
-function GridPaintings() {
+function Grid({ storagePath }) {
   const [state, setState] = useState({
     blurValue: 0,
     viewImage: {
@@ -29,7 +29,7 @@ function GridPaintings() {
 
   const fetchImagesFromFirebase = async () => {
    
-    const storageRef = ref(storage, 'PaintingAssets/');
+    const storageRef = ref(storage, storagePath);
     const imageListRef = await listAll(storageRef);
 
     const urls = await Promise.all(imageListRef.items.map(async (item) => {
@@ -88,7 +88,7 @@ function GridPaintings() {
   );
 }
 
-export default GridPaintings;
+export default Grid;
 
 const Wrapper = styled.div`
   padding: 4em;

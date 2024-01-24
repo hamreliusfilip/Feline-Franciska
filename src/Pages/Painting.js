@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import GridPaitnings from '../Components/GridPaitnings';
+import Grid from '../Components/Grid';
 import Menu from '../Components/Menu';
 import Footer from '../Components/Footer';
 
@@ -8,7 +8,7 @@ function Painting() {
     <Container>
       <Menu title="PAINTINGS" />
         <Wrapper>
-          <GridPaitnings />
+          <Grid storagePath="PaintingAssets" />
         </Wrapper>
       <Footer />
     </Container>
