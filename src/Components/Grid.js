@@ -17,6 +17,9 @@ function Grid({ storagePath }) {
 
   const { blurValue, viewImage, showViewLargeImage } = state;
 
+
+  
+  
   useEffect(() => {
     if (showViewLargeImage) {
       document.body.style.overflow = "hidden";
@@ -50,6 +53,7 @@ function Grid({ storagePath }) {
 
       setState(prevState => ({ ...prevState, paintingsData }));
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showViewLargeImage, setState]);
 
   return (
