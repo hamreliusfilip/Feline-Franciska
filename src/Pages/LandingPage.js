@@ -137,7 +137,7 @@ const Nav = styled.nav`
     align-items: center;
     justify-content: center;
     font-size: 1.3em;
-    margin-top: -400px;
+    margin-top: -300px;
   }
 
   ul {

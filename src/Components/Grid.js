@@ -50,7 +50,7 @@ function Grid({ storagePath }) {
 
       setState(prevState => ({ ...prevState, paintingsData }));
     });
-  }, []);
+  }, [showViewLargeImage, setState]);
 
   return (
     <>
